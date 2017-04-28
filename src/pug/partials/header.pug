@@ -4,7 +4,7 @@
 		{text: 'Серийная мебель', url: '#'},
 		{text: 'Заказная мебель', url: '#'},
 		{text: 'Каталог материалов', url: '#'},
-		{text: 'Сотрудничество', url: '#'},
+		{text: 'Сотрудничество', url: '#'}
 	];
 header.header
 	.div_header
@@ -12,24 +12,24 @@ header.header
 			.dh-1 Логотип
 			nav.dh-2
 				ul.header-menu
-					each item,index in menu
-						if index === 0
-							li.active: a(href=item.url)= item.text
+					each item in menu
+						if item.text === 'Главная'
+							li: span= item.text
 						else
-							li.active: a(href=item.url)= item.text
+							li: a(href=item.url)= item.text
 			.dh-3
 				.dh-3-column
 					.dh-3-row
 						.header-phone.phone-icon-h
 							.header-phone-item
-								img(src="/images/viber.png", title="Viber", alt="Viber")
-								img(src="/images/whats_up.png", title="Whats App", alt="Whats App")
+								img(src="assets/img/viber.png", title="Viber", alt="Viber")
+								img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
 							.header-phone-item
 								span.phone-header +3 097 932 86 19
 					.dh-3-row
 						a.btn_gauger(href="#") Вызвать замерщика
 		.box-head-2
-			img.slider-header-img(src="/images/slide1.jpg")
+			img.slider-header-img(src="assets/img/slide1.jpg")
 			.slider-center-box
 				.scb-1 Не переплачивайте посредникам!
 				.scb-2 Заказывайте корпусную и встраиваемую мебель у Производителя!

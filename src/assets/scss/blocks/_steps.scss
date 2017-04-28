@@ -1,0 +1,46 @@
+.steps-item-note{
+  background: #fff;
+  border: 2px solid #008ec0;
+  box-shadow: 0 2px 5px 0 rgba(41,48,49,.28);
+  border-radius: 10px;
+  margin-top: -10px;
+  margin-bottom: 100px;
+  padding: 30px;
+  position: relative;
+  z-index: 3;
+  ._tbl li{
+    float: left;
+    width: 50%;
+  }
+  .topic{
+    font: 18px/20px 'OpenSansRegular';
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 24px;
+  }
+  li{
+    position: relative;
+    list-style-type: none;
+    a{
+      &._blue{
+        color: #008ec0;
+      }
+      color: #ff750d;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &::before{
+      content: '';
+      background: #008cbe;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      position: absolute;
+      top: 7px;
+      left: -12px;
+    }
+  }
+}

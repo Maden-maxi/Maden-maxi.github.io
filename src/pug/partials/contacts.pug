@@ -1,0 +1,21 @@
+.box-index-contact
+    .box-index-contact-title Контакты
+    .box-index-contact-text
+        p!= 'Обратившимся в компанию "Фабрика мебели" заказчикам не приходится <br> беспокоится ни за качество, ни за их установку.'
+    .box-index-contact-icon
+        -
+            var contactContent = [
+                {icon:'map-marker', text: 'Адресс'},
+                {icon:'phone', text: '+3 097 932 86 19'},
+                {icon:'envelope-o', text: 'hithisemail@gmail.com'},
+                {icon:'skype', text: 'Skype'},
+                {icon:'whatsapp', text: 'WhatsApp'},
+                {icon:'vimeo', text: 'Viber'}
+            ];
+        .row
+            each contact in contactContent
+                .col-md-2
+                    .icon-index-contact
+                        i(class="fa fa-"+ contact.icon, aria-hidden="true")
+                    .icon-index-contact-content
+                        p= contact.text

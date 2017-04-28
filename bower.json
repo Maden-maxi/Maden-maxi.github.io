@@ -18,8 +18,8 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "bxslider-4": "^4.2.12"
   },
   "overrides": {
     "font-awesome": {
@@ -34,6 +34,13 @@
         "dist/js/bootstrap.js",
         "dist/css/bootstrap.css"
       ]
+    },
+    "bxslider-4": {
+      "main": [
+        "dist/jquery.bxslider.css",
+        "dist/jquery.bxslider.js"
+      ]
     }
-  }
+  },
+  "devDependencies": {}
 }
