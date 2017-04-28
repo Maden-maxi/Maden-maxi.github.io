@@ -1,0 +1,27 @@
+-
+	var menu = [
+		{text: 'Главная', url: '#'},
+		{text: 'Серийная мебель', url: '#'},
+		{text: 'Заказная мебель', url: '#'},
+		{text: 'Каталог материалов', url: '#'},
+		{text: 'Сотрудничество', url: '#'},
+	];
+footer.footer
+	.div_footer
+		.box-footer-1
+			.df-1
+				.header-phone.phone-icon-h
+					.header-phone-item
+						img(src="/images/viber.png", title="Viber", alt="Viber")
+						img(src="/images/whats_up.png", title="Whats App", alt="Whats App")
+					.header-phone-item
+						span.phone-header +3 097 932 86 19
+			nav.df-2
+				ul.header-menu
+					each item,index in menu
+						if index === 0
+							li.active: a(href=item.url)= item.text
+						else
+							li.active: a(href=item.url)= item.text
+			.df-3
+				a.btn_gauger(href="#") Вызвать замерщика
