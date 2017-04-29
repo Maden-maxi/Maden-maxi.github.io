@@ -7,31 +7,32 @@
 		{text: 'Сотрудничество', url: 'cooperation.html'}
 	];
 nav#header.container.navbar.navbar-inverse
-	.navbar-header
-		button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#nav-site-header" aria-expanded="false")
-			span.sr-only Toggle navigation
-			span.icon-bar
-			span.icon-bar
-			span.icon-bar
-		a#logo-brand(href="index.html"): img.img-responsive(src="http://meb-el.ru/bitrix/templates/main/img/logo.png")
-	.navbar-collapse.collapse#nav-site-header(aria-expanded="false" style={"height": "1.11111px"})
-		ul.nav.navbar-nav
-			each item in menu
-				if item.text === 'Главная'
-					li.active: a(href=item.url)= item.text
-				else
-					li: a(href=item.url)= item.text
-		.nav.navbar-nav.navbar-right
-			.header-phone.phone-icon-h
-				.header-phone-item.header-phone-item-icons
-					.header-phone-item-icon-img
-					img.header-phone-item-icon-img(src="assets/img/skype.png", title="Skype", alt="Skype")
-					img.header-phone-item-icon-img(src="assets/img/viber.png", title="Viber", alt="Viber")
-					img.header-phone-item-icon-img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
-				.header-phone-item.header-phone-item-contacts
-					div.phone-header skype-login
-					div.phone-header +3 097 932 86 19
-			a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
+	.container
+		.navbar-header
+			button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#nav-site-header" aria-expanded="false")
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a#logo-brand(href="index.html"): img.img-responsive(src="http://meb-el.ru/bitrix/templates/main/img/logo.png")
+		.navbar-collapse.collapse#nav-site-header(aria-expanded="false" style={"height": "1.11111px"})
+			ul.nav.navbar-nav
+				each item in menu
+					if item.text === 'Главная'
+						li.active: a(href=item.url)= item.text
+					else
+						li: a(href=item.url)= item.text
+			.nav.navbar-nav.navbar-right
+				.header-phone.phone-icon-h
+					.header-phone-item.header-phone-item-icons
+						.header-phone-item-icon-img
+						img.header-phone-item-icon-img(src="assets/img/skype.png", title="Skype", alt="Skype")
+						img.header-phone-item-icon-img(src="assets/img/viber.png", title="Viber", alt="Viber")
+						img.header-phone-item-icon-img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
+					.header-phone-item.header-phone-item-contacts
+						div.phone-header skype-login
+						div.phone-header +3 097 932 86 19
+				a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
 
 header.container.header
 	.div_header
