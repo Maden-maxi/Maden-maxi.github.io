@@ -32,9 +32,13 @@
   .product-color-picker{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
   }
   .product-leave-review{
     margin-left: 15px;
+  }
+  .product-heading-stat{
+    line-height: 1.3;
   }
 }
 .product-gallery-item{
@@ -45,4 +49,22 @@
 }
 .load-more{
   display: inline-block;
+}
+a.btn_gauger{
+  &:hover{
+    text-decoration: none;
+  }
+}
+.rewiew{
+  &::after{
+    content: ' ';
+    display: block;
+    height: 1px;
+    background-color: #cccccc;
+  }
+  &:last-child{
+    &::after{
+      content: normal;
+    }
+  }
 }

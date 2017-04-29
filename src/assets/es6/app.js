@@ -54,20 +54,14 @@ jQuery(document).ready(function($) {
         slideMargin: 0
     });
 
-    $('.product-carousel').bxSlider({
-        slideWidth: 295,
-        minSlides: 1,
-        maxSlides: 4,
-        moveSlides: 1,
-        startSlide: 0,
-        slideMargin: 10
-    });
-
     //modals
     let modalProduct = $('.product-modal');
-    let rating = $("input.rating");
+    let ratingProduct = $("input.product-rating");
+    let ratingComment = $("input.rating-comment");
+    let ratingStatic = $("input.rating-static");
 
-    rating.on('change',function () {
+
+    ratingComment.on('change',function () {
        $(this).siblings('.badge').text($(this).val());
     });
 
@@ -78,23 +72,43 @@ jQuery(document).ready(function($) {
         let modal = $(this);
 
         $.get('assets/dummy-data/product-id-'+productID+'.json', function (response) {
+            ratingProduct.attr('value', response.rating);
+            ratingStatic.attr('value', response.rating);
+            modal.find('.badge').text(response.rating);
+
             modal.find('.product-price').html(response.price);
+
             modal.find('.product-modal-thumbnail').attr({
                 src: response.thumbnail,
                 alt: response.title
             });
+
             modal.find('.product-art').text(response.art);
+
             modal.find('.product-name').text(response.title);
+
             let colorsMarkup = '<div class="product-color" style="background-image: url('+response.thumbnail+')" data-toggle="tooltip" data-placement="top" title="'+response.title+'" data-color="'+response.thumbnail+'"></div>';
             $.each(response.colors, function (index, value) {
                 colorsMarkup += '<div class="product-color" style="background-image: url('+value.img+')" data-toggle="tooltip" data-placement="top" title="'+value.title+'" data-color="'+value.img+'"></div>';
             });
-            modal.find('.badge').text(response.rating);
-            rating.val(response.rating);
-            rating.rating({
-                fractions: 2,
-                start: response.rating
+
+            ratingStatic.rating({
+                fractions: 2
             });
+
+            ratingComment.rating({
+                fractions: 2
+            });
+
+
+            setTimeout(
+                function () {
+                    ratingProduct.rating({
+                        fractions: 2
+                    });
+                }, 300
+            );
+
             modal.find('.product-colors').html(colorsMarkup);
             $('[data-toggle="tooltip"]').tooltip();
             modal.find('.product-description').html(response.description);
@@ -126,7 +140,7 @@ jQuery(document).ready(function($) {
         let $this = $(this);
         let colorPicker = $this.closest('.order-info-color-picker');
         let selectedColor = colorPicker.find('.order-info-color-picker-color');
-        selectedColor.text($this.text());
+        selectedColor.html($this.html());
         colorPicker.find('[type="hidden"]').val($this.data('value'));
     });
 

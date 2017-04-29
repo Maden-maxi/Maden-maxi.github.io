@@ -25,10 +25,18 @@ block content
                                             span.caret
                                             span.sr-only Открить випадающий список
                                         ul.dropdown-menu
-                                            li: a(href="#", data-value="") Виберите цвет
-                                            li: a(href="#", data-value="#00f") Синий
-                                            li: a(href="#", data-value="#0f0") Зелений
-                                            li: a(href="#", data-value="#f00") Красний
+                                            li: a(href="#", data-value="")
+                                                span.order-info-color-picker-circle(style={"background-color": "transparent"})
+                                                span Виберите цвет
+                                            li: a(href="#", data-value="#00f")
+                                                span.order-info-color-picker-circle(style={"background-color": "#00f"})
+                                                span Синий
+                                            li: a(href="#", data-value="#0f0")
+                                                span.order-info-color-picker-circle(style={"background-color": "#0f0"})
+                                                span Зелений
+                                            li: a(href="#", data-value="#f00")
+                                                span.order-info-color-picker-circle(style={"background-color": "#f00"})
+                                                span Красний
                                 .order-info.order-info-count
                                         span.input-number-decrement -
                                         input.input-number(type="text" value="1" min="0" max="10")

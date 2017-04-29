@@ -5,26 +5,21 @@ block content
             .moduleIndex
                 h1.center-index-h1 Серийная мебель
                 p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
+                .row.product-gallery
+                    - var n = 0;
+                    while n < 40
+                        .col-xs-12.col-sm-6.col-md-3.product-gallery-item
+                            a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
+                                img.img-responsive(src="http://placehold.it/295x198")
+                        - n++;
                 .row
-                    .col-xs-12
-                        ul.product-carousel
-                            li
-                                a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
-                                    img(src="http://placehold.it/295x198", alt="")
-                            li
-                                a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
-                                    img(src="http://placehold.it/295x198", alt="")
-                            li
-                                a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
-                                    img(src="http://placehold.it/295x198", alt="")
-                            li
-                                a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
-                                    img(src="http://placehold.it/295x198", alt="")
-                            li
-                                a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
-                                    img(src="http://placehold.it/295x198", alt="")
-                            li
-                                a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
-                                    img(src="http://placehold.it/295x198", alt="")
+                    nav.text-center(aria-label="Постраничная навигация")
+                        ul.pagination.pagination-brand
+                            li.disabled: a(href="#", aria-label="Previous"): i(aria-hidden="true").fa.fa-arrow-left
+                            li.active: a(href="#") 1
+                            li: a(href="#") 2
+                            li: a(href="#") 3
+                            li: a(href="#") 4
+                            li: a(href="#", aria-label="Next"): i(aria-hidden="true").fa.fa-arrow-right
     .appendix
     include partials/modal-product

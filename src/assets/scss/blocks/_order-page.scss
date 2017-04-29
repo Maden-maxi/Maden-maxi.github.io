@@ -1,5 +1,24 @@
 .order-info{
   margin-bottom: 20px;
+  &-color-picker-color{
+    display: flex;
+    align-items: center;
+  }
+  &-color-picker-circle{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  ul.dropdown-menu{
+    li{
+      a{
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
   &-count{
     font-size: 0;
     .input-number{

@@ -18,3 +18,17 @@
 .wrapper .bx-wrapper .bx-controls-direction a{
   z-index: 1;
 }
+.pagination-brand{
+  li a{
+    color: #ffc518;
+  }
+  .active{
+    a{
+      background-color: #ffc518;
+      border: 1px solid #ffc518;
+      &:hover{
+        background-color: #ffa900;
+      }
+    }
+  }
+}

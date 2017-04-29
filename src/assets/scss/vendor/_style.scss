@@ -119,17 +119,19 @@ a img { border: none; } /* IE брать рамку с картинки кото
 
 .header-phone {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .phone-icon-h {
     color: #fff;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .phone-icon-h img {
     padding-right: 3px;
+    width: 25px;
+    height: 25px;
 }
 
 .phone-header {
@@ -137,9 +139,12 @@ a img { border: none; } /* IE брать рамку с картинки кото
 }
 
 .header-phone .header-phone-item {
-    padding-top: 15px;
+    padding-top: 5px;
 }
-
+.dh-3-row .btn_gauger{
+    margin-top: 5px;
+    padding: 5px 19px;
+}
 .btn_gauger {
     background: #ffc518;
     background: -moz-linear-gradient(top, #ffc518 0%, #ffa900 100%);
