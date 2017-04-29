@@ -1,0 +1,16 @@
+#product-callback.modal.fade(tabindex="-1", role="dialog")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                button.close(data-dismiss="modal" aria-label="Close"): span(aria-hidden="true") &times;
+                h2.modal-title.text-center!= 'Вызова замерщика'
+            .modal-body
+                form
+                    p.text-center Оставьте заявку и мы вам перезвоним. Наш оператор договорится о удобном для вас времени.
+                    .form-group
+                        label(for="client_name") Ваше имя
+                        input#client_name.form-control(name="client_name", type="text", placeholder="Введите ваше имя")
+                    .form-group
+                        label(for="client_phone") Телефон
+                        input#client_phone.form-control(name="client_phone", data-inputmask="'mask': '+38 (099) 999-99-99'")
+                    button.btn.btn_gauger(type="submit") Отправить заявку

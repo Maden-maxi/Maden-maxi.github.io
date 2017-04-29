@@ -18,10 +18,10 @@ footer.footer
 						span.phone-header.phone-footer  +3 097 932 86 19
 			nav.df-2
 				ul.header-menu
-					each item,index in menu
-						if index === 0
-							li.active: a(href=item.url)= item.text
+					each item in menu
+						if item.text === 'Главная'
+							li: span= item.text
 						else
 							li.active: a(href=item.url)= item.text
 			.df-3
-				a.btn_gauger(href="#") Вызвать замерщика
+				a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика

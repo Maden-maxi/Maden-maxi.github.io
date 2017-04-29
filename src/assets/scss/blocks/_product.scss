@@ -1,0 +1,48 @@
+.product{
+  &-colors{
+    display: flex;
+  }
+  &-color{
+    margin: 5px;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.product-modal{
+  .modal-header{
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    color: #fff;
+    background-color: transparentize(#000, .5);
+    .close{
+      color: #fff;
+      opacity: 1;
+    }
+  }
+  .modal-body{
+
+  }
+  .rating-container{
+    color: #ffc518;
+    font-size: 3rem;
+  }
+  .product-color-picker{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .product-leave-review{
+    margin-left: 15px;
+  }
+}
+.product-gallery-item{
+  margin-bottom: 20px;
+  img{
+    margin: auto;
+  }
+}
+.load-more{
+  display: inline-block;
+}

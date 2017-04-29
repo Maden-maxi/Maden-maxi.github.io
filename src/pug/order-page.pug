@@ -1,0 +1,57 @@
+extends layouts/page.pug
+block content
+    #content
+        .div_content
+            .moduleIndex
+                h1.center-index-h1 Оформление заказа
+                .row
+                    .col-xs-12.col-md-8
+                        .row
+                            .col-xs-12
+                                .order-info
+                                    b Номер заказа:
+                                    span 155487
+                                .order-info
+                                    b Артикул:
+                                    span 055487
+                                .order-info
+                                    b Название:
+                                    span товара добавленог в коризину
+                                .order-info.order-info-color-picker
+                                    input(type="hidden", name="product_color")
+                                    .btn-group
+                                        button.btn.btn-default.order-info-color-picker-color(type="button") Виберите цвет
+                                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                            span.caret
+                                            span.sr-only Открить випадающий список
+                                        ul.dropdown-menu
+                                            li: a(href="#", data-value="") Виберите цвет
+                                            li: a(href="#", data-value="#00f") Синий
+                                            li: a(href="#", data-value="#0f0") Зелений
+                                            li: a(href="#", data-value="#f00") Красний
+                                .order-info.order-info-count
+                                        span.input-number-decrement -
+                                        input.input-number(type="text" value="1" min="0" max="10")
+                                        span.input-number-increment +
+                                        button.btn.btn-default.input-number-reset(type="button") Обновить
+                            .col-xs-12.col-md-8
+                                img.img-responsive(src="http://placehold.it/350x275")
+                            .col-xs-12.col-md-4
+                                .form-group
+                                    label Имя
+                                    input.form-control(placeholder="Ваше имя")
+                                .form-group
+                                    label Город
+                                    input.form-control(placeholder="Ваш город")
+                                .form-group
+                                    label Телефон
+                                    input.form-control(placeholder="Ваш телефон", data-inputmask="'mask': '+38 (099)-999-99-99'")
+                                .form-group
+                                    label E-mail
+                                    input.form-control(placeholder="Ваш email", type="email")
+                                p
+                                    b Стоимость: 2544 грн.
+                                button.btn.btn_gauger Отправить заказ
+
+
+    .appendix

@@ -44,7 +44,7 @@ gulp.task('scss:watch', () => {
 
 
 gulp.task('js',  () => {
-	return gulp.src('src/assets/es6/app.js')
+	return gulp.src('src/assets/es6/*.js')
 		.pipe($.babel({
 			presets: ['es2015']
 		}))

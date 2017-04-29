@@ -1,4 +1,4 @@
-@import "bootstrap";
+//@import "bootstrap";
 @import "fonts";
 
 *{margin: 0; padding: 0; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
@@ -140,7 +140,7 @@ a img { border: none; } /* IE брать рамку с картинки кото
     padding-top: 15px;
 }
 
-a.btn_gauger {
+.btn_gauger {
     background: #ffc518;
     background: -moz-linear-gradient(top, #ffc518 0%, #ffa900 100%);
     background: -webkit-linear-gradient(top, #ffc518 0%,#ffa900 100%);
@@ -157,7 +157,7 @@ a.btn_gauger {
     text-decoration: none;
 }
 
-a.btn_gauger:hover {
+.btn_gauger:hover {
     color: #fff;
     background: #ffa900;
 }

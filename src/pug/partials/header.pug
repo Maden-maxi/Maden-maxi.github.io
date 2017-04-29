@@ -1,15 +1,15 @@
 -
 	var menu = [
 		{text: 'Главная', url: '#'},
-		{text: 'Серийная мебель', url: '#'},
-		{text: 'Заказная мебель', url: '#'},
-		{text: 'Каталог материалов', url: '#'},
+		{text: 'Серийная мебель', url: 'serial-furniture.html'},
+		{text: 'Заказная мебель', url: 'custom-furniture.html'},
+		{text: 'Каталог материалов', url: 'catalog-materials.html'},
 		{text: 'Сотрудничество', url: '#'}
 	];
 header.header
 	.div_header
 		.box-head-1
-			.dh-1 Логотип
+			.dh-1(onclick="location.assign('/')") Логотип
 			nav.dh-2
 				ul.header-menu
 					each item in menu
@@ -27,11 +27,11 @@ header.header
 							.header-phone-item
 								span.phone-header +3 097 932 86 19
 					.dh-3-row
-						a.btn_gauger(href="#") Вызвать замерщика
+						a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
 		.box-head-2
 			img.slider-header-img(src="assets/img/slide1.jpg")
 			.slider-center-box
 				.scb-1 Не переплачивайте посредникам!
 				.scb-2 Заказывайте корпусную и встраиваемую мебель у Производителя!
 				.scb-3
-					a(href="#") Получить дизайн проека бесплатно
+					a(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Получить дизайн проека бесплатно

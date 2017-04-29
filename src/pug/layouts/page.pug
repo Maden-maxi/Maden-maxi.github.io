@@ -26,8 +26,14 @@ html(lang="ru")
 				include ../partials/header
 			block content
 				h1 Hello Pug!
+			//endbuild
 		block footer
 			include ../partials/footer
+		block modals
+			include ../partials/modal-product
+			include ../partials/modal-product-custom
+			include ../partials/modal-product-material
+			include ../partials/modal-callback
 		block scripts
 			//build:js assets/js/vendor.js
 			//bower:js
@@ -36,5 +42,5 @@ html(lang="ru")
 			//endbuild
 
 			//build:js assets/js/app.js
+			script(src="assets/js/star-rating.js")
 			script(src="assets/js/app.js")
-			//endbuild

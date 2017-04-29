@@ -1,5 +1,9 @@
 @import "vendor/style";
 //blocks
+@import "global/helpers";
 @import "blocks/steps";
 @import "blocks/blog";
-@import "global/helpers";
+@import "blocks/product";
+@import "blocks/callback-modal";
+@import "blocks/catalog-material";
+@import "blocks/order-page";
