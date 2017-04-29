@@ -1,7 +1,38 @@
 #header{
   background-color: #434343;
   color: #fff;
+  border: none;
+  border-radius: 0;
+  .navbar-header{
+    margin-left: -15px;
+    height: 100px;
+    #logo-brand{
+      display: block;
+    }
+  }
 }
+#nav-site-header{
+  ul.nav.navbar-nav{
+    li{
+      a{
+        color: #fff;
+        text-decoration: underline;
+        transition: color .3s;
+        &:hover{
+          color: $brand-color;
+        }
+      }
+      &.active{
+        a{
+          text-decoration: none;
+          color: $brand-color;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
 .main-menu{
   display: flex;
   flex-wrap: wrap;
