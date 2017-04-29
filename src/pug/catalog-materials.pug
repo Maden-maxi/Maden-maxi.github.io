@@ -1,74 +1,75 @@
 extends layouts/page.pug
 block content
-    #content
-        .div_content
-            .moduleIndex
-                h1.center-index-h1 Каталог материалов
-                .row
-                    .col-xs-12
-                        .material
-                            .material-img.text-center(style={"background-image": "url(http://www.mebcorp.ru/meb-material/4.jpg)"})
-                                h2.material-title ЛДСП
-                                a.btn_gauger.material-show-more(href="#") Подробнее
-                            .material-description
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium
-                            .material-block-more
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium
-                                .row.product-gallery
-                                    - var n = 0;
-                                    while n < 4
-                                        .col-xs-12.col-sm-6.col-md-3.product-gallery-item
-                                            a(href="#", data-toggle="modal", data-target="#product-material", data-product-id="1")
-                                                img.img-responsive(src="http://nahimebli.com.ua/wp-content/uploads/2014/11/788899901.jpg")
-                                        - n++;
-                                .row.text-center
-                                    a.btn_gauger.load-more(href="#") Посмотреть еще...
+    main#main
+        .container
+            h1.text-center Каталог материалов
+            .row
+                .col-xs-12
+                    .material
+                        .material-img.text-center(style={"background-image": "url(http://www.mebcorp.ru/meb-material/4.jpg)"})
+                            h2.material-title ЛДСП
+                            a.btn_gauger.material-show-more(href="#") Подробнее
+                        .material-description
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium
+                        .material-block-more
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium
+                            .row.product-gallery
+                                - var n = 0;
+                                while n < 4
+                                    .col-xs-12.col-sm-6.col-md-3.product-gallery-item
+                                        a(href="#", data-toggle="modal", data-target="#product-material", data-product-id="1")
+                                            img.img-responsive(src="http://nahimebli.com.ua/wp-content/uploads/2014/11/788899901.jpg")
+                                    - n++;
+                            .row.text-center
+                                a.btn_gauger.load-more(href="#") Посмотреть еще...
 
 
-                        .material
-                            .material-img.text-center(style={"background-image": "url(http://www.mvd-mebel.ru/images/downolod//%D0%9E%D1%80%D0%B5%D1%85%20%D0%B8%D1%81%D0%BF%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9.jpg)"})
-                                h2.material-title МДФ
-                                a.btn_gauger.material-show-more(href="#") Подробнее
-                            .material-description
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
-                            .material-block-more
-                                ul.nav.nav-pills(role="tablist")
-                                    li.active: a(href="#tab-material-description", aria-controls="description", role="tab" data-toggle="pill") Описание
-                                    li: a(href="#tab-material-gallery", aria-controls="gallery" role="tab" data-toggle="pill") Галерея
-                                .tab-content
-                                    .tab-pane.active.fade.in(role="tabpanel", id="tab-material-description")
-                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
-                                    .tab-pane(role="tabpanel", id="tab-material-gallery")
-                                        .row.product-gallery
-                                            - var n = 0;
-                                            while n < 4
-                                                .col-xs-12.col-sm-6.col-md-3.product-gallery-item
-                                                    a(href="#", data-toggle="modal", data-target="#product-material", data-product-id="1")
-                                                        img.img-responsive(src="http://nahimebli.com.ua/wp-content/uploads/2014/11/788899901.jpg")
-                                                - n++;
-                                        .row.text-center
-                                            a.btn_gauger.load-more(href="#") Посмотреть еще...
-                        .material
-                            .material-img.text-center(style={"background-image": "url(http://www.mskmebel.net/wp-content/uploads/cen-3.jpg)"})
-                                h2.material-title Дерево
-                                a.btn_gauger.material-show-more(href="#") Подробнее
-                            .material-description
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
-                            .material-block-more
-                                ul.nav.nav-pills(role="tablist")
-                                    li.active: a(href="#tab-material-tree-description", aria-controls="description", role="tab" data-toggle="pill") Описание
-                                    li: a(href="#tab-material-tree-gallery", aria-controls="gallery" role="tab" data-toggle="pill") Галерея
-                                .tab-content
-                                    .tab-pane.active.fade.in(role="tabpanel", id="tab-material-tree-description")
-                                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
-                                    .tab-pane(role="tabpanel", id="tab-material-tree-gallery")
-                                        .row.product-gallery
-                                            - var n = 0;
-                                            while n < 4
-                                                .col-xs-12.col-sm-6.col-md-3.product-gallery-item
-                                                    a(href="#", data-toggle="modal", data-target="#product-material", data-product-id="1")
-                                                        img.img-responsive(src="http://nahimebli.com.ua/wp-content/uploads/2014/11/788899901.jpg")
-                                                - n++;
-                                        .row.text-center
-                                            a.btn_gauger.load-more(href="#") Посмотреть еще...
+                    .material
+                        .material-img.text-center(style={"background-image": "url(http://www.mvd-mebel.ru/images/downolod//%D0%9E%D1%80%D0%B5%D1%85%20%D0%B8%D1%81%D0%BF%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9.jpg)"})
+                            h2.material-title МДФ
+                            a.btn_gauger.material-show-more(href="#") Подробнее
+                        .material-description
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
+                        .material-block-more
+                            ul.nav.nav-pills(role="tablist")
+                                li.active: a(href="#tab-material-description", aria-controls="description", role="tab" data-toggle="pill") Описание
+                                li: a(href="#tab-material-gallery", aria-controls="gallery" role="tab" data-toggle="pill") Галерея
+                            .tab-content
+                                .tab-pane.active.fade.in(role="tabpanel", id="tab-material-description")
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
+                                .tab-pane(role="tabpanel", id="tab-material-gallery")
+                                    .row.product-gallery
+                                        - var n = 0;
+                                        while n < 4
+                                            .col-xs-12.col-sm-6.col-md-3.product-gallery-item
+                                                a(href="#", data-toggle="modal", data-target="#product-material", data-product-id="1")
+                                                    img.img-responsive(src="http://nahimebli.com.ua/wp-content/uploads/2014/11/788899901.jpg")
+                                            - n++;
+                                    .row.text-center
+                                        a.btn_gauger.load-more(href="#") Посмотреть еще...
+                    .material
+                        .material-img.text-center(style={"background-image": "url(http://www.mskmebel.net/wp-content/uploads/cen-3.jpg)"})
+                            h2.material-title Дерево
+                            a.btn_gauger.material-show-more(href="#") Подробнее
+                        .material-description
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
+                        .material-block-more
+                            ul.nav.nav-pills(role="tablist")
+                                li.active: a(href="#tab-material-tree-description", aria-controls="description", role="tab" data-toggle="pill") Описание
+                                li: a(href="#tab-material-tree-gallery", aria-controls="gallery" role="tab" data-toggle="pill") Галерея
+                            .tab-content
+                                .tab-pane.active.fade.in(role="tabpanel", id="tab-material-tree-description")
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
+                                .tab-pane(role="tabpanel", id="tab-material-tree-gallery")
+                                    .row.product-gallery
+                                        - var n = 0;
+                                        while n < 4
+                                            .col-xs-12.col-sm-6.col-md-3.product-gallery-item
+                                                a(href="#", data-toggle="modal", data-target="#product-material", data-product-id="1")
+                                                    img.img-responsive(src="http://nahimebli.com.ua/wp-content/uploads/2014/11/788899901.jpg")
+                                            - n++;
+                                    .row.text-center
+                                        a.btn_gauger.load-more(href="#") Посмотреть еще...
     .appendix
+block modals
+    include partials/modal-product-material

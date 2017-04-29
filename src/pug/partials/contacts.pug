@@ -1,5 +1,5 @@
-.box-index-contact
-    .box-index-contact-title Контакты
+section#contacts.container
+    h2.box-index-contact-title Контакты
     .box-index-contact-text
         p!= 'Обратившимся в компанию "Фабрика мебели" заказчикам не приходится <br> беспокоится ни за качество, ни за их установку.'
     .box-index-contact-icon
@@ -12,10 +12,10 @@
                 {icon:'whatsapp', text: 'WhatsApp'},
                 {icon:'vimeo', text: 'Viber'}
             ];
-        .row
-            each contact in contactContent
-                .col-md-2
-                    .icon-index-contact
-                        i(class="fa fa-"+ contact.icon, aria-hidden="true")
-                    .icon-index-contact-content
-                        p= contact.text
+    .row
+        each contact in contactContent
+            .col-xs-6.col-sm-4.col-md-2
+                .icon-index-contact
+                    i(class="fa fa-"+ contact.icon, aria-hidden="true")
+                .icon-index-contact-content
+                    p= contact.text

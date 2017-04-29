@@ -8,7 +8,10 @@
   display: flex;
   flex-wrap: wrap;
 }
-.row.is-flex > [class*='col-'] {
+.row.align-center{
+  align-items: center;
+}
+/*.row.is-flex > [class*='col-'] {
   display: flex;
   flex-direction: column;
-}
+}*/

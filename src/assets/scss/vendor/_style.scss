@@ -6,8 +6,8 @@
 html,body{height:100%;}
 body { color:#000; font-size: 14px; font-family: 'OpenSansRegular', sans-serif; }
 .wrapper{min-height:100%}
-.header{ height: 113px; }
-.footer{ height:100px; margin-top:-100px; background: #f6f5f1; }
+.footer{
+    min-height: 100px; margin-top:-100px; background: #f6f5f1; }
 .appendix{height:140px;clear:both}
 
 .div_header { height: 113px; }
@@ -151,31 +151,10 @@ a img { border: none; } /* IE брать рамку с картинки кото
     margin-top: 10px;
     padding: 5px 19px;
 }
-.btn_gauger {
-    background: #ffc518;
-    background: -moz-linear-gradient(top, #ffc518 0%, #ffa900 100%);
-    background: -webkit-linear-gradient(top, #ffc518 0%,#ffa900 100%);
-    background: linear-gradient(to bottom, #ffc518 0%,#ffa900 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc518', endColorstr='#ffa900',GradientType=0 );
-    box-shadow: 0 1px 10px 0 rgba(37,23,3,.2);
-    padding: 10px 19px;
-    font-size: 16px;
-    font-family: 'OpenSansRegular', sans-serif;
-    text-align: center;
-    color: #fff;
-    display: block;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-.btn_gauger:hover {
-    color: #fff;
-    background: #ffa900;
-}
 
 .header-menu {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     list-style: none;
     height: 100%;
 }
@@ -233,9 +212,7 @@ a img { border: none; } /* IE брать рамку с картинки кото
     padding-top: 0px;
 }
 
-.center-index-h1 {
-    float: left;
-    width: 100%;
+.page-title {
     text-align: center;
     padding-top: 40px;
     margin-bottom: 65px;
@@ -297,15 +274,15 @@ p {
 }
 
 .box-item-step-padd img {
-    right: 0px !important;
+    right: 0 !important;
 }
 
 .box-item-step-padd-odd img {
-    left: 0px !important;
+    left: 0 !important;
 }
 
 .padd-0 {
-    padding: 0px;
+    padding: 0;
 }
 
 .box-index-steps-out {
@@ -315,12 +292,12 @@ p {
 
 .min-h-300 {
     min-height: 300px;
-    padding: 0px;
+    padding: 0;
 }
 
 .min-h-486 {
     min-height: 486px !important;
-    padding: 0px;
+    padding: 0;
 }
 
 .box-step-image {
@@ -451,14 +428,12 @@ p {
 }
 
 .icon-index-contact-content {
-    float: left;
     margin-top: 10px;
     width: 100%;
     text-align: center;
 }
 
 .box-index-map {
-    float: left;
     width: 100%;
     margin-top: 30px;
     height: 500px;

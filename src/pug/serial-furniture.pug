@@ -1,14 +1,13 @@
 extends layouts/page.pug
 block content
-    #content
-        .div_content
-            .moduleIndex
-                h1.center-index-h1 Серийная мебель
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!
+    main#main
+        .container
+                h1.text-center Серийная мебель
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora inventore assumenda quo nisi repellat, delectus voluptate debitis eum ea officia eaque laboriosam, rem, doloremque dicta velit nemo optio, dignissimos numquam porro qui accusamus alias explicabo iure? Deserunt ratione asperiores iusto facere hic facilis a reiciendis, minus, consequuntur modi aliquid vitae necessitatibus, animi accusantium optio, inventore. Asperiores voluptatum eveniet quis odit eos nulla, nisi nobis, pariatur quo, quibusdam ut tempore qui neque cum dolorum architecto nesciunt assumenda porro vel aliquam illo laudantium dolorem. Officiis adipisci eum, fugit consectetur recusandae consequatur accusamus. Nobis maiores, fugiat cumque provident voluptatem rerum perspiciatis laudantium accusantium!!
                 .row.product-gallery
                     - var n = 0;
                     while n < 40
-                        .col-xs-12.col-sm-6.col-md-3.product-gallery-item
+                        .col-xs-12.col-sm-6.col-md-4.col-lg-3.product-gallery-item
                             a(href="#", data-toggle="modal", data-target="#product-modal", data-product-id="1")
                                 img.img-responsive(src="http://placehold.it/295x198")
                         - n++;
@@ -22,4 +21,5 @@ block content
                             li: a(href="#") 4
                             li: a(href="#", aria-label="Next"): i(aria-hidden="true").fa.fa-arrow-right
     .appendix
+block modals
     include partials/modal-product

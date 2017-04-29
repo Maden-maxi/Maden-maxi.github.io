@@ -21,7 +21,7 @@ html(lang="ru")
 		block title
 			title Главная
 	body
-		.wrapper.container-fluid
+		.wrapper
 			block header
 				include ../partials/header
 			block content
@@ -33,8 +33,9 @@ html(lang="ru")
 			include ../partials/modal-product
 			include ../partials/modal-product-custom
 			include ../partials/modal-product-material
-			include ../partials/modal-callback
 		block scripts
+			include ../partials/modal-callback
+			//callback modal
 			//build:js assets/js/vendor.js
 			//bower:js
 			//endbower

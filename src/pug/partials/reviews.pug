@@ -3,12 +3,14 @@
 
     };
     var n = 0;
-.box-index-video-reviews
-    .title-video-reviews Отзывы наших клиентов
-    .slider-1-out
-        .slider1
-            while n < 8
-                .slide
-                    a(href="#", data-embed="https://www.youtube.com/embed/V6mbDhXKBDQ", data-toggle="modal", data-target="#review-video")
-                        img(src="//img.youtube.com/vi/V6mbDhXKBDQ/mqdefault.jpg", width="320", height="180")
-                - n++;
+section#reciews.container
+    .row
+        .col-xs-12
+            h2.title-video-reviews Отзывы наших клиентов
+            .slider-1-out
+                .slider1
+                    while n < 8
+                        .slide
+                            a(href="#", data-embed="https://www.youtube.com/embed/V6mbDhXKBDQ", data-toggle="modal", data-target="#review-video")
+                                img(src="//img.youtube.com/vi/V6mbDhXKBDQ/mqdefault.jpg", width="320", height="180")
+                        - n++;
