@@ -21,13 +21,14 @@ header.header
 				.dh-3-column
 					.dh-3-row
 						.header-phone.phone-icon-h
-							.header-phone-item
-								img(src="assets/img/skype.png")
-								span skype-login
-							.header-phone-item
-								img(src="assets/img/viber.png", title="Viber", alt="Viber")
-								img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
-								span.phone-header +3 097 932 86 19
+							.header-phone-item.header-phone-item-icons
+								.header-phone-item-icon-img
+								img.header-phone-item-icon-img(src="assets/img/skype.png", title="Skype", alt="Skype")
+								img.header-phone-item-icon-img(src="assets/img/viber.png", title="Viber", alt="Viber")
+								img.header-phone-item-icon-img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
+							.header-phone-item.header-phone-item-contacts
+								div.phone-header skype-login
+								div.phone-header +3 097 932 86 19
 					.dh-3-row
 						a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
 		.box-head-2
