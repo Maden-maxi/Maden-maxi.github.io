@@ -1,12 +1,34 @@
 -
 	var menu = [
-		{text: 'Главная', url: '#'},
+		{text: 'Главная', url: 'index.html'},
 		{text: 'Серийная мебель', url: 'serial-furniture.html'},
 		{text: 'Заказная мебель', url: 'custom-furniture.html'},
 		{text: 'Каталог материалов', url: 'catalog-materials.html'},
 		{text: 'Сотрудничество', url: 'cooperation.html'}
 	];
-header.header
+header#header.container
+	.row.is-flex
+		.col-xs-12.col-sm-6.col-lg-3
+			a#logo(href="./index.html"): img.img-responsive(src="http://meb-el.ru/bitrix/templates/main/img/logo.png")
+		.col-xs-12.col-md-6.col-lg-3.col-lg-push-6
+				.header-phone.phone-icon-h
+					.header-phone-item.header-phone-item-icons
+						.header-phone-item-icon-img
+						img.header-phone-item-icon-img(src="assets/img/skype.png", title="Skype", alt="Skype")
+						img.header-phone-item-icon-img(src="assets/img/viber.png", title="Viber", alt="Viber")
+						img.header-phone-item-icon-img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
+					.header-phone-item.header-phone-item-contacts
+						div.phone-header skype-login
+						div.phone-header +3 097 932 86 19
+				a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
+		.col-xs-12.col-lg-6.col-lg-pull-3
+			nav.main-menu
+				each item in menu
+					if item.text === 'Главная'
+						a.active(href=item.url)= item.text
+					else
+						a(href=item.url)= item.text
+header.container.header
 	.div_header
 		.box-head-1
 			.dh-1(onclick="location.assign('/')") Логотип

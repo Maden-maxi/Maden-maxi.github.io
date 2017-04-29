@@ -1,6 +1,12 @@
 @import "vendor/style";
+
 //blocks
+@import "global/variables";
 @import "global/helpers";
+@import "global/settings";
+
+@import "blocks/header";
+
 @import "blocks/steps";
 @import "blocks/blog";
 @import "blocks/product";

@@ -1,0 +1,14 @@
+@media (min-width: 1200px){
+  .container {
+    width: 1200px;
+  }
+}
+
+.row.is-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.is-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
