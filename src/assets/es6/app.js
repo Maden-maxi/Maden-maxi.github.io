@@ -43,7 +43,7 @@
 })();
 
 jQuery(document).ready(function($) {
-	console.log(`jQuery ${$.version}`);
+
 	//carousels
     $('.slider1').bxSlider({
         slideWidth: 397,
@@ -189,10 +189,7 @@ jQuery(document).ready(function($) {
                let footerMenu = $('#nav-site-footer').offset().top;
                $('html, body').animate( {scrollTop: footerMenu }, 1000 );
            }, 200);
-
        }
-
-
     });
 
 });
