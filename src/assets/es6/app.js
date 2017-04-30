@@ -153,10 +153,16 @@ jQuery(document).ready(function($) {
         $this.toggleClass('expanded');
         material.find('.material-block-more').slideToggle({
             always: function () {
-                if($this.hasClass('expanded'))
+                if($this.hasClass('expanded')) {
                     $this.text('Свернуть');
-                else
+
+                    setTimeout(function () {
+                        let footerMenu = material.find('.material-block-more').offset().top;
+                        $('html, body').animate( {scrollTop: footerMenu }, 1000 );
+                    }, 200);
+                }else{
                     $this.text('Подробнее');
+                }
             }
         });
     });
