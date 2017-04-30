@@ -26,6 +26,7 @@
 
   }
   .rating-container{
+
     color: #ffc518;
     font-size: 3rem;
   }
@@ -66,5 +67,15 @@ a.btn_gauger{
     &::after{
       content: normal;
     }
+  }
+}
+@media screen and (max-width: 767px){
+  .rating-container_center{
+    text-align: center;
+  }
+  .product-modal .product-leave-review{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 35px;
   }
 }

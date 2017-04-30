@@ -175,4 +175,18 @@ jQuery(document).ready(function($) {
         }
     });
 
+    //footer
+    $('#footer-dropdown-menu').on('click', function (event) {
+       let $this = $(this);
+       if($this.hasClass('collapsed')){
+           setTimeout(function () {
+               let footerMenu = $('#nav-site-footer').offset().top;
+               $('html, body').animate( {scrollTop: footerMenu }, 1000 );
+           }, 200);
+
+       }
+
+
+    });
+
 });

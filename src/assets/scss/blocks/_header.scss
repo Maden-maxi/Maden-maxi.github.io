@@ -6,8 +6,13 @@
   #logo{
     display: inline-block;
     background-color: #cccccc;
+    padding: 14px 15%;
+    span{
+      font-size: 16px;
+    }
   }
   .nav{
+    text-align: center;
     li{
       a{
         color: #fff;
@@ -37,6 +42,16 @@
   }
 }
 
+.header-contact{
+  padding: 7px 7px 0 7px;
+  &-item{
+    margin-bottom: 7px;
+  }
+  .img-icon{
+    width: 25px;
+    height: 25px;
+  }
+}
 @media screen and (min-width: 992px){
   .header{
     height: 113px;
@@ -70,6 +85,7 @@
     display: none;
   }
   .header #logo{
+    font-size: 16px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -82,15 +98,12 @@
       width: 100%;
     }
   }
-}
-.header-contact{
-  padding: 7px 7px 0 7px;
-  &-item{
-    margin-bottom: 7px;
+  .nav{
+    padding: 20px 0;
   }
-  .img-icon{
-    width: 25px;
-    height: 25px;
+  .header-contact-item{
+    margin-bottom: 20px;
   }
 }
+
 
