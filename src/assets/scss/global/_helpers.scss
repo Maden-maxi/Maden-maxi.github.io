@@ -46,3 +46,17 @@
     margin-left: 0;
   }
 }
+
+@media screen and (max-width: 400px){
+  .hide-400{
+    display: none;
+  }
+}
+@media screen and (min-width: 400px){
+  .show-400{
+    display: none;
+  }
+}
+@media screen and (min-width: 400px){
+
+}

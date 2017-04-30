@@ -52,7 +52,32 @@
     height: 25px;
   }
 }
+
+.footer.header{
+  display: flex;
+  align-items: center;
+  .footer-contact-item-button-show{
+    display: none;
+  }
+}
+@media screen  and (max-width: 1199px){
+  .footer.header{
+    .footer-contact-item-button-hide{
+      display: none;
+    }
+    .footer-contact-item-button-show{
+      display: block;
+    }
+  }
+}
+
+
 @media screen and (min-width: 992px){
+  .footer.header .header-contact{
+    padding: 5px;
+    height: auto;
+    min-height: inherit;
+  }
   .header{
     height: 113px;
     min-height: 113px;

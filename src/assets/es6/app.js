@@ -176,7 +176,7 @@ jQuery(document).ready(function($) {
     });
 
     //footer
-    $('#footer-dropdown-menu').on('click', function (event) {
+    $('.footer-dropdown-menu').on('click', function (event) {
        let $this = $(this);
        if($this.hasClass('collapsed')){
            setTimeout(function () {
