@@ -26,16 +26,14 @@ footer.footer.header.navbar-inverse
 										img.pull-right.img-icon(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
 									.col-xs-8
 										.phone-header +3 097 932 86 19
-							.col-xs-12.header-contact-item.footer-contact-item-button-show
-								.row
-									.col-xs-12
-										a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
 					.col-xs-2
 						button.footer-dropdown-menu.navbar-toggle.collapsed(data-toggle="collapse" data-target="#nav-site-footer" aria-expanded="false")
 							span.sr-only Toggle navigation
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
+					.col-xs-12(style={"margin-bottom": "15px"})
+						a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
 			.col-xs-12.col-md-12.col-lg-2.padding-off.hidden-xs
 				.row.header-contact
 					.col-xs-4.col-sm-3.col-lg-12.header-contact-item
@@ -76,22 +74,3 @@ footer.footer.header.navbar-inverse
 								.row
 									.col-xs-12
 										a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
-//
-	footer.footer
-	.div_footer
-		.box-footer-1
-			.df-1
-				.header-phone.phone-icon-h
-					.header-phone-item
-						img(src="assets/img/viber.png", title="Viber", alt="Viber")
-						img(src="assets/img/whats_up.png", title="Whats App", alt="Whats App")
-						span.phone-header.phone-footer  +3 097 932 86 19
-			nav.df-2
-				ul.header-menu
-					each item in menu
-						if item.text === 'Главная'
-							li: span= item.text
-						else
-							li.active: a(href=item.url)= item.text
-			.df-3
-				a.btn_gauger(href="#", data-target="#product-callback", data-toggle="modal", data-mtitle="Вызов замерщика") Вызвать замерщика
