@@ -166,7 +166,7 @@ jQuery(document).ready(function($) {
             }
         });
     });
-    let w = 'show.bs.modal';
+
     $('#review-video').on({
         'show.bs.modal': function (event) {
             let modal = $(this);
