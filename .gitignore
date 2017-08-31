@@ -1,8 +1,0 @@
-node_modules
-src/bower_components
-src/*.html
-
-src/assets/css
-src/assets/js
-.idea
-*.log
