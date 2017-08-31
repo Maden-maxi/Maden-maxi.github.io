@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
   errMessage: string;
   loading: boolean;
   firstCheck;
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       }, error => {
         console.log(error);
-      });
+      }).unsubscribe();
     }
   }
   checkApiKey(event) {
@@ -47,8 +47,5 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.errMessage = error.error.message;
       this.loading = false;
     } );
-  }
-  ngOnDestroy() {
-    this.firstCheck.unsubscribe();
   }
 }
