@@ -8,7 +8,6 @@ export class WeatherGuard implements CanLoad {
   constructor(private weatherService: WeatherService, private router: Router) {}
   canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
     const apiKey = this.weatherService.apiKey;
-    console.log(apiKey);
     if (!apiKey) {
       this.router.navigate(['/']);
     }

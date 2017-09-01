@@ -9,12 +9,10 @@ export class HomeGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    console.log(this.weatherService.apiKey);
     if ( this.weatherService.apiKey !== null ) {
       this.router.navigate(['/weather']);
       return false;
     } else {
-      // this.router.navigate(['/']);
       return true;
     }
   }

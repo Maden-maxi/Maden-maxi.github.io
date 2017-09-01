@@ -46,11 +46,13 @@ export class WeatherService {
    * Default params in querySting
    * @type {{APPID: string; lang: string}}
    */
-  private defaults = {
-    APPID: this.apiKey,
-    lang: this.lang,
-    units: 'metric'
-  };
+  get defaults() {
+    return{
+      APPID: this.apiKey,
+      lang: this.lang,
+      units: 'metric'
+    };
+  }
   get apiKey(): string|null {
     return localStorage.getItem( this.prefix + 'apiKey');
   }
@@ -116,7 +118,7 @@ export class WeatherService {
     const def = this.defaults;
     const fromString = this.serialize( Object.assign( paramsQuery, def) );
     const params = new HttpParams({fromString});
-    console.log(fromString, params, paramsQuery);
+    console.log(fromString, params, paramsQuery, def);
     return this.http.get(this.rootUrl + route, {params});
   }
 }

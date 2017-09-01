@@ -41,11 +41,8 @@ export class WelcomeComponent implements OnInit {
         queryParams = {q: this.checkSecondParam(f.value.city_name, f.value.city_code)};
     }
     const tw = this.dataRoute;
-    // console.log(f, queryParams);
     this.weatherService.weather(queryParams, tw).subscribe(res => {
       this.weatherData = res;
-      Object.assign(window, {res});
-      console.log(res);
     }, error => {
       console.log(error);
     });

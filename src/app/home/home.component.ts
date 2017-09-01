@@ -47,7 +47,6 @@ export class HomeComponent implements OnInit {
       this.openDialog({message: 'Select your language!', success: false});
     } else {
       this.weatherService.testKey(apiKey).subscribe( (response: {cod: number}) => {
-        console.log(response.cod);
         if (response.cod) {
           this.weatherService.apiKey = apiKey;
           this.weatherService.lang = this.selectedLang;
@@ -63,7 +62,6 @@ export class HomeComponent implements OnInit {
         this.loading = false;
       } );
     }
-    console.log(apiKey, this.selectedLang);
   }
   openDialog(data) {
     return this.dialog.open(DialogComponent, {
