@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions, PreloadAllModules } from '@angular/router';
 import { WeatherGuard } from './weather/weather.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: 'weather',
     loadChildren: './weather/weather.module#WeatherModule',
     canLoad: [WeatherGuard]
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
 const config: ExtraOptions = {
-  useHash: true,
+  useHash: false,
   preloadingStrategy: PreloadAllModules
 };
 

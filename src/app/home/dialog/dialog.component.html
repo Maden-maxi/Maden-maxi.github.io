@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <button md-button>
+    <md-icon [innerHTML]="data.success ? 'assignment_turned_in' : 'error'"></md-icon>
+    <span [innerHTML]="data.success ? 'Success' : 'Error'"></span>
+  </button>
+  <md-dialog-content>{{data.message}}</md-dialog-content>
+  <button class="close-btn" [style]="{float: 'right'}" md-mini-fab *ngIf="!data.success" md-dialog-close>
+    <md-icon>close</md-icon>
+  </button>
+</div>
+<button color="primary" md-raised-button *ngIf="data.success" md-dialog-close>
+  Go to panel
+</button>

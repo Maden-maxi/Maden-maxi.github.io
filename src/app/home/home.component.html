@@ -9,9 +9,14 @@
         </md-card-subtitle>
       </md-card-header>
       <md-card-content>
+        <md-select placeholder="Choose your language" [name]="'lang'" [required]="true" [value]="selectedLang" [(ngModel)]="selectedLang">
+          <md-option *ngFor="let lang of langs" [value]="lang.code" >
+            {{lang.name}}
+          </md-option>
+        </md-select>
         <div class="row">
           <md-form-field class="col-6">
-            <input mdInput name="api_key" placeholder="YOUR API KEY">
+            <input mdInput name="api_key" [required]="true" placeholder="YOUR API KEY">
           </md-form-field>
           <div class="col-6">
             <md-spinner *ngIf="loading" class="home-spinner" color="primary"></md-spinner>

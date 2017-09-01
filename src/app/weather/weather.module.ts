@@ -5,17 +5,20 @@ import { WeatherRoutingModule } from './weather-routing.module';
 import { WeatherComponent } from './weather.component';
 import { MdToolbarModule, MdButtonModule, MdIconModule } from '@angular/material';
 import { SettingsComponent } from './settings/settings.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { MaterialComponentsModule } from '../shared/material-components/material-components.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MdToolbarModule,
-    MdButtonModule,
-    MdIconModule,
+    SharedModule,
     WeatherRoutingModule
   ],
-  declarations: [WeatherComponent, SettingsComponent],
+  declarations: [WeatherComponent, SettingsComponent, DialogComponent, WelcomeComponent],
+  entryComponents: [DialogComponent],
   providers: []
 })
 export class WeatherModule { }
