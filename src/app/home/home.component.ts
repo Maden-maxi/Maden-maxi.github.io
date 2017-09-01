@@ -2,21 +2,19 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { MdDialog } from '@angular/material';
 import { WeatherService } from '../weather/weather.service';
-import { routerTransition } from '../animations/routing.animations';
+// import { routerTransition } from '../animations/routing.animations';
 import { DialogComponent } from './dialog/dialog.component';
-import { Observable } from 'rxjs/Observable';
-
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  animations: [routerTransition()]
+  styleUrls: ['./home.component.scss']
+  /*animations: [routerTransition()]*/
 })
 export class HomeComponent implements OnInit {
-  @HostBinding('@routerTransition') get routerTransition() {
+  /*@HostBinding('@routerTransition') get routerTrs() {
     return '';
-  }
+  }*/
   errMessage: string;
   loading: boolean;
   langs = WeatherService.weatherLangs;

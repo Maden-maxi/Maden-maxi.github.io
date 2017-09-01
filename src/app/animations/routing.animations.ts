@@ -1,7 +1,7 @@
 import {trigger, state, animate, style, transition} from '@angular/animations';
 
 export function routerTransition() {
-  return fadeInAnimation();
+  return fadeIn();
 }
 
 function slideToRight() {
@@ -63,10 +63,7 @@ function slideToTop() {
     ])
   ]);
 }
-export function fadeIn() {
-  return fadeInAnimation();
-}
-function fadeInAnimation() {
+function fadeIn() {
   return trigger('routerTransition', [
     // route 'enter' transition
     transition(':enter', [

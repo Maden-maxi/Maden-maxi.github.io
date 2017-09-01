@@ -7,7 +7,7 @@ router-outlet + *{
   display: block;
 }
 
-.weather-outlet-lvl-1 + * {
+.weather-outlet-lvl-1 + *, .switch-inputs md-form-field, .mmgFadeIn {
   animation-name: mmgFadeIn;
   animation-duration: 0.3s;
 }

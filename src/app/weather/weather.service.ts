@@ -48,7 +48,8 @@ export class WeatherService {
    */
   private defaults = {
     APPID: this.apiKey,
-    lang: this.lang
+    lang: this.lang,
+    units: 'metric'
   };
   get apiKey(): string|null {
     return localStorage.getItem( this.prefix + 'apiKey');
@@ -111,9 +112,11 @@ export class WeatherService {
    * Get forecast data
    * @returns {Observable<any>}
    */
-  weather(paramsQuery: WeatherService, route: 'weather' | 'forecast' = 'weather'): Observable<any> {
-    const fromString = this.serialize( Object.assign(this.defaults, paramsQuery) );
+  weather(paramsQuery: WeatherParams, route: 'weather' | 'forecast' = 'weather'): Observable<any> {
+    const def = this.defaults;
+    const fromString = this.serialize( Object.assign( paramsQuery, def) );
     const params = new HttpParams({fromString});
+    console.log(fromString, params, paramsQuery);
     return this.http.get(this.rootUrl + route, {params});
   }
 }

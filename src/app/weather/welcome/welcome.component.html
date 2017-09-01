@@ -1,15 +1,15 @@
 <div class="row">
-  <div class="col-xs-12 col-md-4">
-    <form #queryForm="ngForm" (submit)="search(queryForm)">
+  <div class="col-xs-12 col-md-3">
+    <form #queryForm="ngForm" (submit)="search(queryForm, $event)">
 
       <md-select (change)="selectedValues = {}" placeholder="Search By" name="searchBy" [required]="true" [value]="selectedParam" [(ngModel)]="selectedParam">
         <md-option *ngFor="let param of searchByParams" [value]="param.param" >
           {{param.name}}
         </md-option>
       </md-select>
-
-      <md-radio-group name="typeWeather"  [value]="'weather'" [(ngModel)]="selectedValues.typeWeather">
-        <md-radio-button value="weather" selected>Weather</md-radio-button>
+      <div></div>
+      <md-radio-group name="typeWeather" [(ngModel)]="dataRoute">
+        <md-radio-button value="weather">Weather</md-radio-button>
         <md-radio-button value="forecast">Forecast</md-radio-button>
       </md-radio-group>
 
@@ -47,11 +47,53 @@
         <button [disabled]="!queryForm.valid" md-mini-fab>
           <md-icon>search</md-icon>
         </button>
-        {{selectedValues | json}}
+        <a routerLink="." (click)="queryForm.resetForm(); weatherData = null" md-mini-fab>
+          <md-icon>refresh</md-icon>
+        </a>
       </div>
     </form>
   </div>
-  <div class="col-xs-12 col-md-8">
-    <pre>{{weatherData | json}}</pre>
+  <div class="col-xs-12 col-md-9">
+    <div class="row mmgFadeIn" *ngIf="weatherData">
+
+      <ng-container *ngIf="dataRoute == 'weather'; else forecast_template">
+        <div class="col-xs-12 weather-map-location">
+          <agm-map class="mmgFadeIn" [latitude]="weatherData.coord.lat" [longitude]="weatherData.coord.lon">
+            <agm-marker [latitude]="weatherData.coord.lat" [longitude]="weatherData.coord.lon"></agm-marker>
+          </agm-map>
+        </div>
+        <app-weather-card class="col-xs-12" [sys]="weatherData.sys" [clouds]="weatherData.clouds" [main]="weatherData.main" [wind]="weatherData.wind" [dt]="weatherData.dt" [city]="{name: weatherData.name, country: weatherData.sys.country}" [weather]="weatherData.weather"></app-weather-card>
+      </ng-container>
+      <ng-template #forecast_template>
+
+        <div class="col-xs-12 weather-map-location">
+          <agm-map class="mmgFadeIn" [latitude]="weatherData.city.coord.lat" [longitude]="weatherData.city.coord.lon">
+            <agm-marker [latitude]="weatherData.city.coord.lat" [longitude]="weatherData.city.coord.lon"></agm-marker>
+          </agm-map>
+        </div>
+        <div class="col-xs-12">
+          <md-card>
+            <md-card-title>Forecasts in {{weatherData.city.name}}, {{weatherData.city.country | uppercase}}</md-card-title>
+            <md-card-content>
+              <app-weather-chart [weather]="weatherData"></app-weather-chart>
+            </md-card-content>
+          </md-card>
+        </div>
+
+        <div class="col-md-12" *ngFor="let weatherItem of weatherData.list">
+          <app-weather-card
+            [wind]="weatherItem.wind"
+            [clouds]="weatherItem.clouds"
+            [dt]="weatherItem.dt_txt"
+            [main]="weatherItem.main"
+            [city]="weatherData.city"
+            [sys]="weatherItem.sys"
+            [rain]="weatherItem.rain"
+            [weather]="weatherItem.weather"></app-weather-card>
+        </div>
+
+      </ng-template>
+
+    </div>
   </div>
 </div>

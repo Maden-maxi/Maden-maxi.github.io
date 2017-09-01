@@ -1,0 +1,10 @@
+<md-dialog-content class="chart-dialog">
+  <md-dialog-actions>
+    <button class="close-btn" md-dialog-close md-icon-button><md-icon>close</md-icon></button>
+  </md-dialog-actions>
+  <app-weather-card class="no-shadow" [weather]="data.weather.weather"
+                  [sys]="data.weather.sys"
+                  [clouds]="data.weather.clouds"
+                  [wind]="data.weather.wind"
+  [main]="data.weather.main" [rain]="data.weather.rain" [dt]="data.weather.dt"></app-weather-card>
+</md-dialog-content>

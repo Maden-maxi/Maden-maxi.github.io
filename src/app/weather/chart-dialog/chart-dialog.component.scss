@@ -1,0 +1,15 @@
+.chart-dialog{
+  position: relative;
+  md-card{
+    box-shadow: none;
+  }
+}
+.close-btn{
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: -10px;
+}
+md-dialog-actions{
+  padding: 0;
+}

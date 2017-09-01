@@ -1,0 +1,32 @@
+.weather-card{
+  &-header{
+    align-items: center;
+    margin-bottom: 15px;
+    md-card-subtitle{
+      margin-bottom: 0;
+    }
+  }
+  &-icon{
+    margin-right: 15px;
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
+  }
+  &-table{
+    border-collapse: collapse;
+    td, th{
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 10px;
+    }
+    tr{
+      &:nth-child(2n+1){
+        background-color: #f9f9f9;
+      }
+    }
+  }
+}
+
+:host(.no-shadow){
+  md-card {
+      box-shadow: none;
+  }
+}
