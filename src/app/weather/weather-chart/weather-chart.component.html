@@ -1,5 +1,6 @@
 <ng-container *ngIf="multi.length">
   <ngx-charts-line-chart
+    class="weather-chart"
     [view]="view"
     [scheme]="colorScheme"
     [results]="multi"
@@ -7,10 +8,12 @@
     [xAxis]="showXAxis"
     [yAxis]="showYAxis"
     [legend]="showLegend"
+    [showGridLines]="showGridLines"
     [showXAxisLabel]="showXAxisLabel"
     [showYAxisLabel]="showYAxisLabel"
     [xAxisLabel]="xAxisLabel"
     [yAxisLabel]="yAxisLabel"
+    [yAxisTickFormatting]="yAxisTickFormatting"
     [autoScale]="autoScale"
     (select)="onSelect($event)"
   ></ngx-charts-line-chart>

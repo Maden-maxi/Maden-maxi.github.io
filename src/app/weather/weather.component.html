@@ -3,13 +3,16 @@
     <a color="warn" md-mini-fab routerLink="/">
       <md-icon>home</md-icon>
     </a>
-    <span>WeatherApp</span>
+    <span routerLink="/dashboard/weather" i18n="@@AppName">WeatherApp</span>
   </h1>
   <span class="toolbar-divider"></span>
-  <a md-icon-button routerLink="settings"><md-icon>settings</md-icon></a>
-  <button type="button" md-icon-button (click)="logout()"><md-icon>exit_to_app</md-icon></button>
+  <button type="button" mdTooltip="Exit" i18n-mdTooltip="@@Exit" md-icon-button (click)="logout()"><md-icon>exit_to_app</md-icon></button>
 </md-toolbar>
-<div class="container">
-  <router-outlet class="weather-outlet weather-outlet-lvl-1"></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet class="weather-outlet weather-outlet-lvl-1"></router-outlet>
+    </div>
+  </div>
 </div>
 

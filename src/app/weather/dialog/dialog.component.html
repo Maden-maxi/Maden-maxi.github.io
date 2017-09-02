@@ -1,7 +1,7 @@
-<md-card>
-  <md-card-title>You really want exit?</md-card-title>
+<md-card class="dialog-card-quest">
+  <md-card-title i18n="ask exit|Question about if you want exit from app@@exitApp">You really want exit?</md-card-title>
   <md-card-content>
-        <button color="warn" (click)="dialogRef.close(true)" md-raised-button>YES</button>
-        <button color="accent" (click)="dialogRef.close(false)" md-raised-button>NO</button>
+        <button color="warn" i18n="@@YES" (click)="dialogRef.close(true)" md-raised-button>YES</button>
+        <button color="accent" i18n="@@NO" (click)="dialogRef.close(false)" md-raised-button>NO</button>
   </md-card-content>
 </md-card>

@@ -1,5 +1,6 @@
 .chart-dialog{
   position: relative;
+  overflow: inherit;
   md-card{
     box-shadow: none;
   }
@@ -8,7 +9,7 @@
   position: absolute;
   right: 0;
   z-index: 1;
-  top: -10px;
+  top: -24px;
 }
 md-dialog-actions{
   padding: 0;

@@ -2,14 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-interface WeatherParams {
+export const SEARCH_PARAMS = [
+  {param: 'q', name: 'City Name', info: 'By city name {city name},{country code}'},
+  {param: 'id', name: 'City ID', info: 'By city ID'},
+  {param: 'coordinates', name: 'Coordinates', info: 'By geographic coordinates'},
+  {param: 'zip', name: 'Zip Code', info: 'By ZIP code {zip code},{country code}'}
+];
+
+export interface WeatherParams {
   q: string; // By city name {city name},{country code}
   id: number; // By city ID
-  /**
-   * By geographic coordinates
-   */
-  lat: number;
-  lon: number;
+  lat: number; // By geographic coordinates latitude
+  lon: number; // By geographic coordinates longitude
   zip: string; // By ZIP code {zip code},{country code}
 }
 
@@ -22,11 +26,11 @@ interface WeatherLang {
 export class WeatherService {
   public static weatherLangs: WeatherLang[] = [
     {code: 'en', name: 'English'},
-    {code: 'de', name: 'German'},
-    {code: 'fr', name: 'French'},
+    {code: 'de', name: 'Deutsche'},
+    {code: 'ru', name: 'Русский'}
+    /*{code: 'fr', name: 'French'},
     {code: 'it', name: 'Italian'},
-    {code: 'ru', name: 'Russian'},
-    {code: 'ua', name: 'Ukrainian'}
+    {code: 'ua', name: 'Ukrainian'}*/
   ];
   private prefix = 'openweathermap_';
   /**
@@ -44,7 +48,7 @@ export class WeatherService {
   };
   /**
    * Default params in querySting
-   * @type {{APPID: string; lang: string}}
+   * @type {{APPID: string; lang: string; units: string}}
    */
   get defaults() {
     return{
@@ -63,7 +67,40 @@ export class WeatherService {
     return localStorage.getItem(this.prefix + 'lang');
   }
   set lang(lang: string) {
-    localStorage.setItem(this.prefix + 'lang', lang);
+    localStorage.setItem(this.prefix + 'lang', window.document.documentElement.lang);
+  }
+  get weatherData() {
+    return JSON.parse(localStorage.getItem(this.prefix + 'weather_data'));
+  }
+  set weatherData(data) {
+    localStorage.setItem(this.prefix + 'weather_data', JSON.stringify(data));
+  }
+  get forecastData() {
+    return JSON.parse(localStorage.getItem(this.prefix + 'forecast_data'));
+  }
+  set forecastData(data) {
+    localStorage.setItem(this.prefix + 'forecast_data', JSON.stringify(data));
+  }
+  /**
+   * Constructor
+   * @param {HttpClient, URL} http
+   */
+  constructor(private http: HttpClient) { }
+  /**
+   * Flush service data
+   */
+  flushData() {
+    localStorage.removeItem(this.prefix + 'forecast_data');
+    localStorage.removeItem(this.prefix + 'weather_data');
+    localStorage.removeItem(this.prefix + 'apiKey');
+    localStorage.removeItem(this.prefix + 'lang');
+  }
+  /**
+   * Clear search reuslts
+   */
+  clearSearchResult() {
+    localStorage.removeItem(this.prefix + 'forecast_data');
+    localStorage.removeItem(this.prefix + 'weather_data');
   }
   /**
    * Build icon image url
@@ -73,33 +110,6 @@ export class WeatherService {
   icon(icon: string): string {
     return `http://openweathermap.org/img/w/${icon}.png`;
   }
-  /**
-   * Remove api key from localStorage
-   * Exit from app
-   */
-  removeKey(): void {
-    localStorage.removeItem(this.prefix + 'apiKey');
-    localStorage.removeItem(this.prefix + 'lang');
-  }
-  /**
-   * Build query string
-   * @param obj
-   * @returns {string}
-   */
-  private serialize(obj: any): string {
-    const str = [];
-    for (const p in obj) {
-      if (obj.hasOwnProperty(p)) {
-        str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
-      }
-    }
-    return str.join('&');
-  }
-  /**
-   * Constructor
-   * @param {HttpClient} http
-   */
-  constructor(private http: HttpClient) { }
   /**
    * Test api key
    * @param key
@@ -118,7 +128,21 @@ export class WeatherService {
     const def = this.defaults;
     const fromString = this.serialize( Object.assign( paramsQuery, def) );
     const params = new HttpParams({fromString});
-    console.log(fromString, params, paramsQuery, def);
+    console.log(window.document.documentElement.lang);
     return this.http.get(this.rootUrl + route, {params});
+  }
+  /**
+   * Build query string
+   * @param obj
+   * @returns {string}
+   */
+  private serialize(obj: any): string {
+    const str = [];
+    for (const p in obj) {
+      if (obj.hasOwnProperty(p)) {
+        str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+      }
+    }
+    return str.join('&');
   }
 }

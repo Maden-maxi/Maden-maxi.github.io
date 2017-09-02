@@ -1,0 +1,6 @@
+<app-weather-card class="with-content" [sys]="weatherService.weatherData.sys" [clouds]="weatherService.weatherData.clouds" [main]="weatherService.weatherData.main" [wind]="weatherService.weatherData.wind" [dt]="weatherService.weatherData.dt" [city]="{name: weatherService.weatherData.name, country: weatherService.weatherData.sys.country}" [weather]="weatherService.weatherData.weather">
+  <agm-map class="mmgFadeIn" [latitude]="weatherService.weatherData.coord.lat" [longitude]="weatherService.weatherData.coord.lon">
+    <agm-marker [latitude]="weatherService.weatherData.coord.lat" [longitude]="weatherService.weatherData.coord.lon"></agm-marker>
+  </agm-map>
+</app-weather-card>
+

@@ -2,30 +2,48 @@
   <form class="home-field-wrapper" (submit)="checkApiKey($event)">
     <md-card class="home-card">
       <md-card-header>
-        <md-card-title><span class="mat-display-1">Welcome to Weather App!</span></md-card-title>
+        <md-card-title>
+          <!--<span class="mat-display-1" i18n="site header|Welcome message">Welcome to Weather App!</span>-->
+          <span class="mat-display-1" i18n="site header|Welcome message@@welcomeHeader">Welcome to Weather App!</span>
+        </md-card-title>
         <md-card-subtitle>
-          <div>Enter your API key for gain access to app.</div>
-          <div>More info about how to <a md-raised-button target="_blank" color="accent" href="http://openweathermap.org/appid"><md-icon>info</md-icon> get API key</a></div>
+          <div i18n="site subheader|Please enter api key@@callToEnterApiKey">Enter your API key for gain access to app.</div>
+          <div>
+            <ng-container i18n="help get api|Info about how get API key@@howGetApiKey">More info about how to</ng-container>
+            <a md-raised-button
+               i18n-title="title link docs api|Title link to documentation about how get API key@@titleLinkDocsGetApi"
+               title="GET API INSTRUCTION"
+               target="_blank"
+               color="accent"
+               href="http://openweathermap.org/appid">
+              <md-icon>info</md-icon>
+              <ng-container i18n="text link to docs|Text link to documentation about how get API key@@textLinkToGetApiDocs">GET API KEY</ng-container>
+            </a>
+          </div>
+          <div><!--i18n: alternative to api|alternative action how get access to app@@alternativeAccess -->If You don't wont generate your API key try use test API key.<!--/i18n--></div>
         </md-card-subtitle>
       </md-card-header>
       <md-card-content>
-        <md-select placeholder="Choose your language" [name]="'lang'" [required]="true" [value]="selectedLang" [(ngModel)]="selectedLang">
+        <md-select (change)="setLang($event)" i18n-placeholder="lang picker|please choose language@@langPicker" placeholder="Choose your language">
           <md-option *ngFor="let lang of langs" [value]="lang.code" >
             {{lang.name}}
           </md-option>
         </md-select>
-        <div class="row">
+        <!--<span i18n="@@SelectLanguages">{lang.name, select, English {English} German {German} French {French} Italian {Italian} Russian {Russian} Ukrainian {Ukrainian}}</span>-->
           <md-form-field class="col-6">
-            <input mdInput name="api_key" [required]="true" placeholder="YOUR API KEY">
+            <input mdInput name="api_key" [required]="true" i18n-placeholder="enter api|please enter api@@apiField" placeholder="YOUR API KEY">
           </md-form-field>
           <div class="col-6">
             <md-spinner *ngIf="loading" class="home-spinner" color="primary"></md-spinner>
           </div>
-        </div>
         <div class="mat-subheading-1">{{errMessage}}</div>
       </md-card-content>
-      <md-card-actions>
-        <button md-raised-button color="primary">Check API Key <md-icon>lock_open</md-icon></button>
+      <md-card-actions class="home-actions">
+        <button md-raised-button color="primary">
+          <ng-container i18n="check api|Check api key acction@@checkApiKey">CHECK API KEY</ng-container>
+          <md-icon>lock_open</md-icon>
+        </button>
+        <a href="#" (click)="useTest($event)" md-raised-button color="warn" i18n="use test api|alternative action to use test api key@@testApiKey">USE TEST API KEY</a>
       </md-card-actions>
     </md-card>
   </form>

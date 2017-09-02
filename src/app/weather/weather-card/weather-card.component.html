@@ -3,55 +3,61 @@
     <ng-container *ngFor="let item of weather">
       <img class="weather-card-icon" md-card-avatar [src]="doIconPath(item.icon)" [alt]="item.main">
       <div>
-        <md-card-title *ngIf="city">Weather in {{city.name}}, {{city.country | uppercase}}</md-card-title>
-        <md-card-subtitle>{{item.main}} ,{{item.description}}, {{dt + '000' | date:'medium'}}</md-card-subtitle>
+        <md-card-title *ngIf="city">
+          <ng-container i18n="@@weatherIn">Weather in</ng-container> {{city.name}}, {{city.country | uppercase}}
+        </md-card-title>
+        <md-card-subtitle>{{item.description}}, {{dt + '000' | date:'medium'}}</md-card-subtitle>
       </div>
     </ng-container>
   </md-card-header>
-  <md-card-content>
-    <table class="weather-card-table">
+  <md-card-content class="md-card-content-area">
+    <table class="weather-card-table" #table>
       <tr>
-        <th class="weather-card-table-data-head">Temperature</th>
+        <th class="weather-card-table-data-head" i18n="@@Temperature">Temperature</th>
         <td class="weather-card-table-data">{{main.temp | celsius}}</td>
       </tr>
       <tr>
-        <th>Humidity</th>
-        <td>{{main.humidity | celsius:' %':'some else'}}</td>
+        <th i18n="@@Humidity">Humidity</th>
+        <td>{{main.humidity | celsius:' %'}}</td>
       </tr>
       <tr>
-        <th>Pressure</th>
+        <th i18n="@@Pressure">Pressure</th>
         <td>{{main.pressure | celsius:' hPa'}}</td>
       </tr>
       <ng-container *ngIf="rain">
         <tr *ngIf="rain['3h']">
-          <th>Rain</th>
-          <td>{{rain['3h'] |  celsius:' last 3 hours'}}</td>
+          <th i18n="@@Rain">Rain</th>
+          <td>{{rain['3h'] | number}} <span i18n="@@Last3Hours">last 3 hours</span></td>
         </tr>
       </ng-container>
       <ng-container *ngIf="snow">
         <tr *ngIf="snow['3h']">
-          <th>Snow</th>
-          <td>{{snow['3h'] |  celsius:' last 3 hours'}}</td>
+          <th i18n="@@Snow">Snow</th>
+          <td>{{snow['3h']}} <span i18n="@@Last3Hours">last 3 hours</span></td>
         </tr>
       </ng-container>
       <tr>
-        <th>Wind</th>
-        <td>{{wind.speed | celsius:' meter/sec'}} <ng-container *ngIf="wind.deg"> | {{wind.deg | celsius: ' °'}}</ng-container></td>
+        <th i18n="@@Wind">Wind</th>
+        <td>{{wind.speed}} <span i18n="@@meterPerSec">meter/sec</span> <ng-container *ngIf="wind.deg"> | {{wind.deg | celsius: ' °'}}</ng-container></td>
       </tr>
       <ng-container *ngIf="sys.sunrise">
         <tr>
-          <th>Sunrise</th>
+          <th i18n="@@Sunrise">Sunrise</th>
           <td>{{sys.sunrise + '000' | date:'H:mm'}}</td>
         </tr>
         <tr>
-          <th>Sunset</th>
+          <th i18n="@@Sunset">Sunset</th>
           <td>{{sys.sunset + '000' | date:'H:mm'}}</td>
         </tr>
       </ng-container>
       <tr *ngIf="clouds">
-        <th>Cloudiness</th>
+        <th i18n="@@Cloudiness">Cloudiness</th>
         <td>{{clouds.all | celsius:' %'}}</td>
       </tr>
     </table>
+
+    <div class="content" [style.height]="table.offsetHeight + 'px'">
+      <ng-content [style.height]="table.offsetHeight + 'px'"></ng-content>
+    </div>
   </md-card-content>
 </md-card>

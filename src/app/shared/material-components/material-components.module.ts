@@ -10,7 +10,10 @@ import {
   MdToolbarModule,
   MdRadioModule,
   MdListModule,
-  MdChipsModule
+  MdChipsModule,
+  MdTabsModule,
+  MdTooltipModule,
+  MdSnackBarModule
 } from '@angular/material';
 
 @NgModule({
@@ -26,7 +29,10 @@ import {
     MdRadioModule,
     MdListModule,
     MdListModule,
-    MdChipsModule
+    MdChipsModule,
+    MdTabsModule,
+    MdTooltipModule,
+    MdSnackBarModule
   ],
   exports: [
     MdCardModule,
@@ -39,7 +45,10 @@ import {
     MdToolbarModule,
     MdRadioModule,
     MdListModule,
-    MdChipsModule
+    MdChipsModule,
+    MdTabsModule,
+    MdTooltipModule,
+    MdSnackBarModule
   ]
 })
 export class MaterialComponentsModule { }

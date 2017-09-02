@@ -1,9 +1,9 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { WeatherService } from './weather.service';
+import { MdDialog, MdSnackBar } from '@angular/material';
+import { DialogComponent } from './dialog/dialog.component';
 // import { routerTransition } from '../animations/routing.animations';
-import {MdDialog} from '@angular/material';
-import {DialogComponent} from './dialog/dialog.component';
 
 @Component({
   selector: 'app-weather',
@@ -30,7 +30,7 @@ export class WeatherComponent implements OnInit {
     });
     refDialog.afterClosed().subscribe( (res: boolean) => {
       if (res) {
-        this.weatherService.removeKey();
+        this.weatherService.flushData();
         this.router.navigate(['/']);
       }
     } );

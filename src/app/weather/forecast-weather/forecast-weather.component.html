@@ -1,0 +1,29 @@
+<div class="row">
+
+  <md-card class="graphic col-xs-12">
+    <md-card-title>
+      <ng-container i18n="@@ForecastIn">Forecasts in</ng-container> {{weatherService.forecastData.city.name}}, {{weatherService.forecastData.city.country | uppercase}}
+    </md-card-title>
+    <md-card-subtitle>
+      <button class="md-alert" md-raised-button color="accent">
+        <md-icon>help</md-icon><em i18n="forecast help|Forecast help how see weather for particular day@@showTipHelpForecast">For see weather for particular day move mouse on line curve. You will see a dot with tooltip which contain data and temperature. For more detail click on dot.</em>
+      </button>
+
+    </md-card-subtitle>
+    <md-card-content class="flex">
+      <app-weather-chart [weather]="weatherService.forecastData"></app-weather-chart>
+    </md-card-content>
+  </md-card>
+
+ <!-- <app-weather-card
+    *ngFor="let forecastItem of weatherService.forecastData.list"
+    class="col-xs-12 col-sm-6 col-md-4 weater-card"
+    [wind]="forecastItem.wind"
+    [clouds]="forecastItem.clouds"
+    [dt]="forecastItem.dt_txt"
+    [main]="forecastItem.main"
+    [city]="forecastItem.city"
+    [sys]="forecastItem.sys"
+    [rain]="forecastItem.rain"
+    [weather]="forecastItem.weather"></app-weather-card>-->
+</div>

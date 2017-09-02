@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { WeatherRoutingModule } from './weather-routing.module';
 import { WeatherComponent } from './weather.component';
-import { SettingsComponent } from './settings/settings.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SharedModule } from '../shared/shared.module';
@@ -13,6 +12,8 @@ import { CelsiusPipe } from './pipes/celsius.pipe';
 import { LineChartModule } from '@swimlane/ngx-charts';
 import { WeatherChartComponent } from './weather-chart/weather-chart.component';
 import { ChartDialogComponent } from './chart-dialog/chart-dialog.component';
+import { CurrentWeatherComponent } from './current-weather/current-weather.component';
+import { ForecastWeatherComponent } from './forecast-weather/forecast-weather.component';
 
 @NgModule({
   imports: [
@@ -26,13 +27,14 @@ import { ChartDialogComponent } from './chart-dialog/chart-dialog.component';
   ],
   declarations: [
     WeatherComponent,
-    SettingsComponent,
     DialogComponent,
     WelcomeComponent,
     WeatherCardComponent,
     CelsiusPipe,
     WeatherChartComponent,
-    ChartDialogComponent
+    ChartDialogComponent,
+    CurrentWeatherComponent,
+    ForecastWeatherComponent
   ],
   entryComponents: [
     DialogComponent,

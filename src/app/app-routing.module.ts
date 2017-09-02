@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: 'weather',
+    path: 'dashboard',
     loadChildren: './weather/weather.module#WeatherModule',
     canLoad: [WeatherGuard]
   },

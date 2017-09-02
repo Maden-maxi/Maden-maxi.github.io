@@ -11,17 +11,18 @@ export class WeatherChartComponent implements OnInit {
   single: any[] = [];
   multi: any[] = [];
 
-  view: any[] = [700, 400];
+  view: any[] = [1100, 400];
   @Input() weather;
   // options
   showXAxis = true;
   showYAxis = true;
-  gradient = true;
+  gradient = false;
+  showGridLines = false;
   showLegend = false;
   showXAxisLabel = true;
-  xAxisLabel = 'Date';
+  xAxisLabel = '  ';
   showYAxisLabel = true;
-  yAxisLabel = 'Temperature';
+  yAxisLabel = 't°C';
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#cc0000']
@@ -50,7 +51,7 @@ export class WeatherChartComponent implements OnInit {
         value: item.main.pressure
       };
     });
-    this.pushData('Temperature', temp);
+    this.pushData(' °C ', temp);
     // this.pushData('Wind', wind);
     // this.pushData('Pressure', pressure);
   }
@@ -79,5 +80,8 @@ export class WeatherChartComponent implements OnInit {
       console.log('closed');
     });
     console.log(selectedItem[0]);
+  }
+  yAxisTickFormatting(val) {
+    return  val + ' °C';
   }
 }

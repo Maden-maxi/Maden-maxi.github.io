@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   errMessage: string;
   loading: boolean;
   langs = WeatherService.weatherLangs;
-  selectedLang = this.langs[0].code;
   firstCheck;
   constructor(
     private router: Router,
@@ -30,7 +29,7 @@ export class HomeComponent implements OnInit {
     if (this.weatherService.apiKey !== null) {
       this.firstCheck = this.weatherService.testKey(this.weatherService.apiKey).subscribe((res: {cod: number}) => {
         if (res.cod) {
-          this.router.navigate(['weather']);
+          this.router.navigate(['/dashboard']);
         }
       }, error => {
         console.log(error);
@@ -43,16 +42,13 @@ export class HomeComponent implements OnInit {
     const apiKey = event.target.api_key.value;
     if (!apiKey) {
       this.openDialog({message: 'API KEY IS REQUIRED!', success: false});
-    } else if (!this.selectedLang) {
-      this.openDialog({message: 'Select your language!', success: false});
     } else {
       this.weatherService.testKey(apiKey).subscribe( (response: {cod: number}) => {
         if (response.cod) {
           this.weatherService.apiKey = apiKey;
-          this.weatherService.lang = this.selectedLang;
           const refDialog = this.openDialog({message: 'API KEY IS TRUE! WELCOME!', success: true});
           refDialog.afterClosed().subscribe(() => {
-            this.router.navigate(['/weather']);
+            this.router.navigate(['/dashboard']);
           });
         }
         this.loading = false;
@@ -68,5 +64,16 @@ export class HomeComponent implements OnInit {
       width: '450px',
       data
     });
+  }
+  useTest(event) {
+    event.preventDefault();
+    this.weatherService.apiKey = '26e150de0e59e398931e697b667d7c4b';
+    this.router.navigate(['/dashboard']);
+  }
+  setLang(event) {
+    const root = location.origin + '/docs/';
+    const lang = event.value === 'en' ? root : root + event.value;
+    console.log(lang);
+    location.assign(lang);
   }
 }

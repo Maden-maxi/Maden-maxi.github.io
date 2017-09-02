@@ -11,3 +11,27 @@ agm-map {
 .flex{
   display: flex;
 }
+.weater-card{
+  margin-top: 15px;
+}
+.query-select{
+  width: 100%;
+  margin-top: -7px;
+}
+md-form-field{
+  width: 100%;
+}
+.form-actions button{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+@media screen and (max-width: 360px){
+  .weather-nav a{
+    font-size: 10px;
+  }
+}
+.home-spinner{
+  width: 30px;
+  height: 30px;
+  padding-left: 30px;
+}

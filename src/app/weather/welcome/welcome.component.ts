@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { WeatherService } from '../weather.service';
+import {SEARCH_PARAMS, WeatherParams, WeatherService} from '../weather.service';
+
+interface SearchFormParams {
+  city_name: string;
+}
 
 @Component({
   selector: 'app-welcome',
@@ -8,24 +12,21 @@ import { WeatherService } from '../weather.service';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  searchByParams = [
-    {param: 'q', name: 'City Name', info: 'By city name {city name},{country code}'},
-    {param: 'id', name: 'City ID', info: 'By city ID'},
-    {param: 'coordinates', name: 'Coordinates', info: 'By geographic coordinates'},
-    {param: 'zip', name: 'Zip Code', info: 'By ZIP code {zip code},{country code}'}
-  ];
+  searchByParams = SEARCH_PARAMS;
   selectedParam = this.searchByParams[0].param;
   selectedValues = {};
-  weatherData;
-  dataRoute: 'weather' | 'forecast';
+  loading = false;
+  navLinks = [
+    {route: './', label: 'CURRENT WEATHER', options: {exact: true}},
+    {route: 'forecast', label: 'FORECAST ON WEEK', options: {}}
+  ];
   constructor(
-    private weatherService: WeatherService
+    public weatherService: WeatherService
   ) { }
-
   ngOnInit() {
   }
-  search(f: NgForm, event) {
-    // event.preventDefault();
+  search(f: NgForm) {
+    this.loading = true;
     let queryParams;
     switch (this.selectedParam) {
       case this.searchByParams[1].param:
@@ -40,14 +41,25 @@ export class WelcomeComponent implements OnInit {
       default:
         queryParams = {q: this.checkSecondParam(f.value.city_name, f.value.city_code)};
     }
-    const tw = this.dataRoute;
-    this.weatherService.weather(queryParams, tw).subscribe(res => {
-      this.weatherData = res;
+    this.weatherService.weather(queryParams, 'weather').subscribe(res => {
+      this.weatherService.weatherData = res;
     }, error => {
       console.log(error);
+    });
+
+    this.weatherService.weather(queryParams, 'forecast').subscribe(res => {
+      this.weatherService.forecastData = res;
+      setTimeout(() => this.loading = false, 1000);
+    }, error => {
+      console.log(error);
+      alert(error.message);
     });
   }
   private checkSecondParam(a: string, b: string): string {
     return (!b) ? a : a + ',' + b;
+  }
+  clearData(form): void {
+    form.resetForm();
+    this.weatherService.clearSearchResult();
   }
 }

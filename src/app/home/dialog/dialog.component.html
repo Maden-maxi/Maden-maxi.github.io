@@ -1,13 +1,14 @@
 <div class="wrapper">
   <button md-button>
     <md-icon [innerHTML]="data.success ? 'assignment_turned_in' : 'error'"></md-icon>
-    <span [innerHTML]="data.success ? 'Success' : 'Error'"></span>
+    <span i18n="@@success" *ngIf="data.success;else error">Success</span>
+    <ng-template #error><span i18n="@@error">Error</span></ng-template>
   </button>
-  <md-dialog-content>{{data.message}}</md-dialog-content>
+  <md-dialog-content>
+    <span i18n="@@homeModalMsg">{data.message, select, API KEY IS REQUIRED! {API KEY IS REQUIRED!} Select your language! {Select your language!}}</span>
+  </md-dialog-content>
   <button class="close-btn" [style]="{float: 'right'}" md-mini-fab *ngIf="!data.success" md-dialog-close>
     <md-icon>close</md-icon>
   </button>
 </div>
-<button color="primary" md-raised-button *ngIf="data.success" md-dialog-close>
-  Go to panel
-</button>
+<button color="primary" i18n="to panel|Go to panel link@@goToPanel" md-raised-button *ngIf="data.success" md-dialog-close>Go to panel</button>

@@ -3,11 +3,28 @@
 @import "~flexboxgrid/dist/flexboxgrid.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+body{
+  background-color: mediumaquamarine;
+}
+
+.mat-body-1 .md-alert{
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.mat-body-1 .mat-dialog-container{
+  margin-right: auto;
+  margin-left: auto;
+}
+
 router-outlet + *{
   display: block;
 }
 
-.weather-outlet-lvl-1 + *, .switch-inputs md-form-field, .mmgFadeIn {
+.weather-outlet-lvl-1 + *,
+.router-animation-fadeIn + *,
+.switch-inputs md-form-field,
+.mmgFadeIn {
   animation-name: mmgFadeIn;
   animation-duration: 0.3s;
 }

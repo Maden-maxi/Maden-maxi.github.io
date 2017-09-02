@@ -30,3 +30,26 @@
       box-shadow: none;
   }
 }
+:host(.with-content){
+  .md-card-content-area{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .content{
+    display: block;
+    flex: 1;
+  }
+  .weather-card-table{
+    @media screen and (max-width: 670px){
+      width: 100%;
+    }
+  }
+  agm-map {
+    height: 100%;
+  }
+}
+:host{
+  .content{
+    display: none;
+  }
+}
