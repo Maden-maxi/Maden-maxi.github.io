@@ -191,8 +191,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="AppName" datatype="html">
-        <source>WetterApp</source>
-        <target>ПриложениеПогода</target>
+        <source>WeatherApp</source>
+        <target>WetterApp</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/weather/weather.component.ts</context>
           <context context-type="linenumber">6</context>
