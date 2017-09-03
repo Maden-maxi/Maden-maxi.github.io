@@ -1,6 +1,6 @@
 .home{
   &-background{
-    position: fixed;
+  	min-height: 100vh;
     top: 0;
     right: 0;
     left: 0;
@@ -9,7 +9,8 @@
     align-items: center;
     justify-content: center;
     @media screen and (max-width: 475px) {
-      min-height: 100vh;
+    	position: static;
+      
       padding: 10px;
     }
   }
@@ -26,7 +27,7 @@
     justify-content: center;
   }
   @media screen and (max-width: 340px) {
-    min-height: 100vh;
+    
   }
 }
 .mat-subheading-1{
@@ -44,4 +45,13 @@
 }
 .home-actions{
   display: flex;
+  flex-wrap: wrap;
+  .action-button{
+  	margin-bottom: 15px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	@media screen and (max-width: 475px) {
+  		width: 100%;
+  	}
+  }
 }

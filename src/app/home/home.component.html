@@ -39,11 +39,11 @@
         <div class="mat-subheading-1">{{errMessage}}</div>
       </md-card-content>
       <md-card-actions class="home-actions">
-        <button md-raised-button color="primary">
+        <button class="action-button" md-raised-button color="primary">
           <ng-container i18n="check api|Check api key acction@@checkApiKey">CHECK API KEY</ng-container>
           <md-icon>lock_open</md-icon>
         </button>
-        <a href="#" (click)="useTest($event)" md-raised-button color="warn" i18n="use test api|alternative action to use test api key@@testApiKey">USE TEST API KEY</a>
+        <a href="#" class="action-button" (click)="useTest($event)" md-raised-button color="warn" i18n="use test api|alternative action to use test api key@@testApiKey">USE TEST API KEY</a>
       </md-card-actions>
     </md-card>
   </form>

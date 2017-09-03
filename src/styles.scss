@@ -37,3 +37,7 @@ router-outlet + *{
     opacity: 1;
   }
 }
+
+.mat-body-1 .mat-dialog-container{
+  max-width: 90vw;
+}
