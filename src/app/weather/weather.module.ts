@@ -14,6 +14,7 @@ import { WeatherChartComponent } from './weather-chart/weather-chart.component';
 import { ChartDialogComponent } from './chart-dialog/chart-dialog.component';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { ForecastWeatherComponent } from './forecast-weather/forecast-weather.component';
+import { AlertSnackBarComponent } from './alert-snackbar/alert-snackbar.component';
 
 @NgModule({
   imports: [
@@ -34,11 +35,13 @@ import { ForecastWeatherComponent } from './forecast-weather/forecast-weather.co
     WeatherChartComponent,
     ChartDialogComponent,
     CurrentWeatherComponent,
-    ForecastWeatherComponent
+    ForecastWeatherComponent,
+    AlertSnackBarComponent
   ],
   entryComponents: [
     DialogComponent,
-    ChartDialogComponent
+    ChartDialogComponent,
+    AlertSnackBarComponent
   ],
   providers: []
 })

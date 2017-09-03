@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
     const apiKey = event.target.api_key.value;
     if (!apiKey) {
       this.openDialog({message: 'API KEY IS REQUIRED!', success: false});
+      this.loading = false;
     } else {
       this.weatherService.testKey(apiKey).subscribe( (response: {cod: number}) => {
         if (response.cod) {

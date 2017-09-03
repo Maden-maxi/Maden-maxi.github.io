@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherGuard } from '../weather/weather.guard';
 import { HomeGuard } from '../home/home.guard';
@@ -12,6 +12,7 @@ import { MdButtonModule, MdIconModule } from '@angular/material';
   imports: [
     CommonModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -20,6 +21,7 @@ import { MdButtonModule, MdIconModule } from '@angular/material';
   ],
   exports: [
     HttpClientModule,
+    HttpClientJsonpModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

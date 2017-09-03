@@ -1,0 +1,7 @@
+<div class="snackbar-wrapper">
+  <button type="button" md-button>
+    <md-icon>info</md-icon>
+    <span i18n="@@SnackBarAlert">{data.error.message | uppercase, select, CITY NOT FOUND {CITY NOT FOUND}}</span>
+  </button>
+  <button md-button (click)="snackbarRef.dismiss()" i18n-mdTooltip="@@Close" mdTooltipPosition="above" mdTooltip="Close"><md-icon>close</md-icon></button>
+</div>

@@ -62,24 +62,18 @@ export class WeatherChartComponent implements OnInit {
   }
 
   onSelect(event) {
-    console.log(event);
-    const contects = this.multi;
-    const selectedSeria = this.multi.filter((item, index) => {
+    const contects = this.multi,
+    selectedSeria = this.multi.filter((item, index) => {
       return item.name === event.series;
-    });
-    console.log(selectedSeria);
-    const selectedItem = this.weather.list.filter(function (item, index) {
+    }),
+    selectedItem = this.weather.list.filter(function (item, index) {
       return selectedSeria[0].series[index].value === event.value;
     });
-    const refDialog = this.dialog.open(ChartDialogComponent, {
+    this.dialog.open(ChartDialogComponent, {
       width: '400px',
       height: '400px',
       data: {weather: selectedItem[0]},
     });
-    refDialog.afterClosed().subscribe(() => {
-      console.log('closed');
-    });
-    console.log(selectedItem[0]);
   }
   yAxisTickFormatting(val) {
     return  val + ' °C';

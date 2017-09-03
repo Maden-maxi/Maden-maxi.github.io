@@ -119,7 +119,7 @@
         <target>IHRE API SCHLÜSSEL</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="description">please enter api</note>
         <note priority="1" from="meaning">enter api</note>
@@ -129,7 +129,7 @@
         <target>CHECK API KEY</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
         </context-group>
         <note priority="1" from="description">Check api key acction</note>
         <note priority="1" from="meaning">check api</note>
@@ -139,7 +139,7 @@
         <target>USE TEST API KEY</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/home/home.component.ts</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">46</context>
         </context-group>
         <note priority="1" from="description">alternative action to use test api key</note>
         <note priority="1" from="meaning">use test api</note>
@@ -155,7 +155,7 @@
         <note priority="1" from="meaning">go home</note>
       </trans-unit>
       <trans-unit id="page404" datatype="html">
-        <source>Page Not Fount</source>
+        <source>Page Not Found</source>
         <target>Seite nicht gefunden</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/not-found/not-found.component.ts</context>
@@ -204,6 +204,30 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/weather/weather.component.ts</context>
           <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CityListOn" datatype="html">
+        <source>LOADING CITY LIST...</source>
+        <target>LADENDE STADTLISTE ...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/weather/weather.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="SnackBarAlert" datatype="html">
+        <source>{VAR_SELECT, select, CITY NOT FOUND {CITY NOT FOUND} }</source>
+        <target>{VAR_SELECT, select, CITY NOT FOUND {STADT NICHT GEFUNDEN} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/weather/alert-snackbar/alert-snackbar.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Close" datatype="html">
+        <source>Close</source>
+        <target>Schließen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/weather/alert-snackbar/alert-snackbar.component.ts</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="SearchByParams" datatype="html">
@@ -299,7 +323,7 @@
         <target>{VAR_SELECT, select, CURRENT WEATHER {AKTUELLE WETTERLAGE} FORECAST ON WEEK {PROGNOSE AUF WOCHE} }</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/weather/welcome/welcome.component.ts</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="callToFillInputs" datatype="html">
@@ -307,7 +331,7 @@
         <target>Füllen Sie Eingaben und klicken Sie auf Suchsymbol, dann erhalten Sie Informationen über das Wetter.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/weather/welcome/welcome.component.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">99</context>
         </context-group>
         <note priority="1" from="description">Call to actions fill inputs and get weather infor</note>
         <note priority="1" from="meaning">fill inputs</note>

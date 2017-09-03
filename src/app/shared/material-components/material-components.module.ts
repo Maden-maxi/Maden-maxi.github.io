@@ -13,7 +13,8 @@ import {
   MdChipsModule,
   MdTabsModule,
   MdTooltipModule,
-  MdSnackBarModule
+  MdSnackBarModule,
+  MdAutocompleteModule
 } from '@angular/material';
 
 @NgModule({
@@ -32,7 +33,8 @@ import {
     MdChipsModule,
     MdTabsModule,
     MdTooltipModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    MdAutocompleteModule
   ],
   exports: [
     MdCardModule,
@@ -48,7 +50,8 @@ import {
     MdChipsModule,
     MdTabsModule,
     MdTooltipModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    MdAutocompleteModule
   ]
 })
 export class MaterialComponentsModule { }

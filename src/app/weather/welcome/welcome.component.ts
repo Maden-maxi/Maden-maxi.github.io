@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {SEARCH_PARAMS, WeatherParams, WeatherService} from '../weather.service';
+import {MdSnackBar, MdSnackBarConfig} from '@angular/material';
+import {AlertSnackBarComponent} from '../alert-snackbar/alert-snackbar.component';
 
 interface SearchFormParams {
   city_name: string;
@@ -21,7 +23,8 @@ export class WelcomeComponent implements OnInit {
     {route: 'forecast', label: 'FORECAST ON WEEK', options: {}}
   ];
   constructor(
-    public weatherService: WeatherService
+    public weatherService: WeatherService,
+    private snackBar: MdSnackBar
   ) { }
   ngOnInit() {
   }
@@ -52,7 +55,17 @@ export class WelcomeComponent implements OnInit {
       setTimeout(() => this.loading = false, 1000);
     }, error => {
       console.log(error);
-      alert(error.message);
+      setTimeout(() => this.loading = false, 1000);
+      const sbConfig: MdSnackBarConfig = {
+        duration: 4000,
+        data: error,
+        announcementMessage: error.message
+      };
+      sbConfig.duration = 4000;
+      const refDialog = this.snackBar.openFromComponent(AlertSnackBarComponent, sbConfig);
+      refDialog.afterDismissed().subscribe(res => {
+        console.log(res);
+      });
     });
   }
   private checkSecondParam(a: string, b: string): string {

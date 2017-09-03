@@ -11,7 +11,24 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <router-outlet class="weather-outlet weather-outlet-lvl-1"></router-outlet>
+      <ng-container *ngIf="progress !== 'load'; else outlet">
+        <md-card class="card-load-status">
+          <md-card-title>
+            <h3 class="card-load-title" i18n="@@CityListOn">LOADING CITY LIST...</h3>
+          </md-card-title>
+          <md-card-content>
+            <div class="progress-wrapper">
+              <b>{{progress}}%</b>
+              <md-progress-spinner class="load-progress" [value]="progress"></md-progress-spinner>
+            </div>
+          </md-card-content>
+        </md-card>
+      </ng-container>
+
+      <ng-template #outlet>
+        <router-outlet class="weather-outlet weather-outlet-lvl-1"></router-outlet>
+      </ng-template>
+      
     </div>
   </div>
 </div>
