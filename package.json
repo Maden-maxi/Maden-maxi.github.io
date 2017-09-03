@@ -12,8 +12,8 @@
     "build-git": "ng build --prod --output-path docs --base-href https://maden-maxi.github.io/docs/ && cp docs/index.html docs/404.html",
     "i18n": "ng xi18n --output-path src/locale",
     "serve:ru": "ng serve --aot --locale ru --i18n-format xlf --i18n-file src/locale/messages.ru.xlf --missing-translation error",
-    "build:ru": "ng build --aot --prod --output-path docs/ru --base-href https://maden-maxi.github.io/docs/ru --locale ru --i18n-format xlf --i18n-file src/locale/messages.ru.xlf --missing-translation error",
-    "build:de": "ng build --aot --prod --output-path docs/de --base-href https://maden-maxi.github.io/docs/de --locale de --i18n-format xlf --i18n-file src/locale/messages.de.xlf --missing-translation error"
+    "build:ru": "ng build --aot --prod --output-path docs/ru --base-href https://maden-maxi.github.io/docs/ru/ --locale ru --i18n-format xlf --i18n-file src/locale/messages.ru.xlf --missing-translation error && cp docs/ru/index.html docs/ru/404.html",
+    "build:de": "ng build --aot --prod --output-path docs/de --base-href https://maden-maxi.github.io/docs/de/ --locale de --i18n-format xlf --i18n-file src/locale/messages.de.xlf --missing-translation error && cp docs/de/index.html docs/de/404.html"
   },
   "private": true,
   "dependencies": {
