@@ -22,7 +22,7 @@ export class WeatherComponent implements OnInit {
     console.log(window);
     return window;
   }
-  progress: any;
+  progress: number;
   constructor(
     public weatherService: WeatherService,
     private router: Router,
@@ -30,16 +30,17 @@ export class WeatherComponent implements OnInit {
   ) {
     // init lang param
     weatherService.lang = !weatherService.lang ? window.document.documentElement.lang : weatherService.lang;
-    this.weatherService.initDataCities().subscribe((event: any) => {
+    this.weatherService.initDataCities().subscribe((event: HttpProgressEvent) => {
       if (event.type === HttpEventType.DownloadProgress) {
-        const percentDone = Math.round(100 * event.loaded / event.total);
+        console.log(event);
+        const percentDone = Math.round(100 * event.loaded / (event.total | 16474251) );
         this.progress = percentDone;
-        //console.log(`File is ${percentDone} downloaded.`);
+        console.log(`File is ${percentDone} downloaded.`);
       } else if (event instanceof HttpResponse) {
         //console.log('File is uploaded', event);
         let context = this;
         console.log(event);
-        setTimeout(() => context.progress = 'load', 1000);
+        setTimeout(() => context.progress = 101, 1000);
         
         /*
         const script = window.document.createElement('script');
